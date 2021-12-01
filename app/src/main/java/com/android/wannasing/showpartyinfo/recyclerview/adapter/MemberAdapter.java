@@ -1,13 +1,13 @@
-package com.example.detailgrouptest.showpartyinfo.recyclerview.adapter;
+package com.android.wannasing.showpartyinfo.recyclerview.adapter;
 
 
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil.ItemCallback;
 import androidx.recyclerview.widget.ListAdapter;
-import com.example.detailgrouptest.showpartyinfo.recyclerview.viewholder.MemberViewHolder;
-import com.example.detailgrouptest.showpartyinfo.recyclerview.viewholder.MemberViewHolder.MemberType;
-import com.example.detailgrouptest.showpartyinfo.recyclerview.viewholder.MemberViewHolder.OnMemberItemClickListener;
+import com.android.wannasing.showpartyinfo.recyclerview.viewholder.MemberViewHolder;
+import com.android.wannasing.showpartyinfo.recyclerview.viewholder.MemberViewHolder.MemberType;
+import com.android.wannasing.showpartyinfo.recyclerview.viewholder.MemberViewHolder.OnMemberItemClickListener;
 
 public class MemberAdapter extends ListAdapter<String, MemberViewHolder> {
 

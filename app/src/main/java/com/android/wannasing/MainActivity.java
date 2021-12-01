@@ -1,11 +1,11 @@
-package com.example.detailgrouptest;
+package com.android.wannasing;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.detailgrouptest.creategroup.CreateGroupActivity;
+import com.android.wannasing.creategroup.CreateGroupActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.creategroup;
+package com.android.wannasing.creategroup;
 
 import static android.content.ContentValues.TAG;
 
@@ -10,13 +10,13 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.detailgrouptest.R;
-import com.example.detailgrouptest.databinding.ActivityCreateGroupBinding;
-import com.example.detailgrouptest.db.entity.Party;
-import com.example.detailgrouptest.db.entity.Party.AgeDetail;
-import com.example.detailgrouptest.db.entity.Party.Gender;
-import com.example.detailgrouptest.db.entity.Party.Genre;
-import com.example.detailgrouptest.db.entity.Party.MyTime;
+import com.android.wannasing.R;
+import com.android.wannasing.databinding.ActivityCreateGroupBinding;
+import com.android.wannasing.db.entity.Party;
+import com.android.wannasing.db.entity.Party.AgeDetail;
+import com.android.wannasing.db.entity.Party.Gender;
+import com.android.wannasing.db.entity.Party.Genre;
+import com.android.wannasing.db.entity.Party.MyTime;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;

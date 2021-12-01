@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.home;
+package com.android.wannasing.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +11,12 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.detailgrouptest.databinding.ActivityHomeBinding;
-import com.example.detailgrouptest.db.entity.Party;
-import com.example.detailgrouptest.home.recyclerview.adapter.HomePartyAdapter;
-import com.example.detailgrouptest.home.recyclerview.adapter.HomePartyAdapter.HomePartyDiff;
-import com.example.detailgrouptest.home.recyclerview.viewholder.HomePartyViewHolder.OnPartyItemClickListener;
-import com.example.detailgrouptest.showpartyinfo.ShowPartyInfoActivity;
+import com.android.wannasing.databinding.ActivityHomeBinding;
+import com.android.wannasing.db.entity.Party;
+import com.android.wannasing.home.recyclerview.adapter.HomePartyAdapter;
+import com.android.wannasing.home.recyclerview.adapter.HomePartyAdapter.HomePartyDiff;
+import com.android.wannasing.home.recyclerview.viewholder.HomePartyViewHolder.OnPartyItemClickListener;
+import com.android.wannasing.showpartyinfo.ShowPartyInfoActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;

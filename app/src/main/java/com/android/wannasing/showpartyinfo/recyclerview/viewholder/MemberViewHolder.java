@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.showpartyinfo.recyclerview.viewholder;
+package com.android.wannasing.showpartyinfo.recyclerview.viewholder;
 
 
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.detailgrouptest.R;
-import com.example.detailgrouptest.databinding.ItemMemberShowPartyInfoBinding;
+import com.android.wannasing.R;
+import com.android.wannasing.databinding.ItemMemberShowPartyInfoBinding;
 import java.util.EventListener;
 
 public class MemberViewHolder extends RecyclerView.ViewHolder {

@@ -1,10 +1,10 @@
-package com.example.detailgrouptest.home;
+package com.android.wannasing.home;
 
 import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import com.example.detailgrouptest.db.entity.Party;
+import com.android.wannasing.db.entity.Party;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;

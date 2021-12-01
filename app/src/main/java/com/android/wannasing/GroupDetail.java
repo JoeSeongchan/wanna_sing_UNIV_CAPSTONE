@@ -1,4 +1,4 @@
-package com.example.detailgrouptest;
+package com.android.wannasing;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;

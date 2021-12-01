@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.db.entity;
+package com.android.wannasing.db.entity;
 
 import androidx.annotation.NonNull;
 

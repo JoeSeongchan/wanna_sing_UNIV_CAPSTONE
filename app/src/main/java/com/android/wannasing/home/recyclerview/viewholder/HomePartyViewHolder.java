@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.home.recyclerview.viewholder;
+package com.android.wannasing.home.recyclerview.viewholder;
 
 
 import android.content.Context;
@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.detailgrouptest.R;
-import com.example.detailgrouptest.databinding.ItemPartyMainBinding;
-import com.example.detailgrouptest.db.entity.Party;
+import com.android.wannasing.R;
+import com.android.wannasing.databinding.ItemPartyMainBinding;
+import com.android.wannasing.db.entity.Party;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.EventListener;

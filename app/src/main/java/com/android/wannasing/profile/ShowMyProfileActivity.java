@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.profile;
+package com.android.wannasing.profile;
 
 
 import androidx.appcompat.app.AppCompatActivity;

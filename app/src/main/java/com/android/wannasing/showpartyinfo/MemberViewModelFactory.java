@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.showpartyinfo;
+package com.android.wannasing.showpartyinfo;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

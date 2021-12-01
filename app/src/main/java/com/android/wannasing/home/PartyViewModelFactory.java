@@ -1,4 +1,4 @@
-package com.example.detailgrouptest.home;
+package com.android.wannasing.home;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

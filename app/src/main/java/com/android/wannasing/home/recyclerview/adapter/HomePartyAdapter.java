@@ -1,13 +1,13 @@
-package com.example.detailgrouptest.home.recyclerview.adapter;
+package com.android.wannasing.home.recyclerview.adapter;
 
 
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil.ItemCallback;
 import androidx.recyclerview.widget.ListAdapter;
-import com.example.detailgrouptest.db.entity.Party;
-import com.example.detailgrouptest.home.recyclerview.viewholder.HomePartyViewHolder;
-import com.example.detailgrouptest.home.recyclerview.viewholder.HomePartyViewHolder.OnPartyItemClickListener;
+import com.android.wannasing.db.entity.Party;
+import com.android.wannasing.home.recyclerview.viewholder.HomePartyViewHolder;
+import com.android.wannasing.home.recyclerview.viewholder.HomePartyViewHolder.OnPartyItemClickListener;
 
 public class HomePartyAdapter extends ListAdapter<Party, HomePartyViewHolder> {
 
