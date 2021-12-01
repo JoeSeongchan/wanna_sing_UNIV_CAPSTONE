@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="login_et_oneItemInput">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="login_til_oneItem">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="register_et_oneItemInput" parent="@style/login_et_oneItemInput" >
+    <item name="android:textSize">15sp</item>
+  </style>
+
+  <style name="register_til_oneItem" parent="@style/login_til_oneItem" />
+
+</resources>

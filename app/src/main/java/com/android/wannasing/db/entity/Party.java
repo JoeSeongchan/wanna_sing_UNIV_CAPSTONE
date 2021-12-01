@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Party implements Serializable {
+public class Party implements Serializable, Entity {
 
   public String hostID = "";
   public String partyName = "";
@@ -62,6 +62,11 @@ public class Party implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(hostID, partyName);
+  }
+
+  @Override
+  public String getPrimaryKey() {
+    return String.valueOf(hashCode());
   }
 
   public enum AgeDetail {

@@ -1,11 +1,12 @@
 package com.android.wannasing.db.entity;
 
 import androidx.annotation.NonNull;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable, Entity {
 
   @NonNull
   private String name = "def_name";
@@ -102,5 +103,10 @@ public class User {
   @Override
   public int hashCode() {
     return Objects.hash(getId());
+  }
+
+  @Override
+  public String getPrimaryKey() {
+    return String.valueOf(hashCode());
   }
 }

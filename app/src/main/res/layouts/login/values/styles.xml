@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="register_tv_oneItemInput" parent="Widget.AppCompat.EditText">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
+
+  <style name="register_ll_oneItemContainer">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">horizontal</item>
+  </style>
+
+  <style name="register_ll_allItemContainer">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:orientation">vertical</item>
+  </style>
+
+  <style name="login_ll_oneItemContainer" parent="@style/register_ll_oneItemContainer" />
+</resources>

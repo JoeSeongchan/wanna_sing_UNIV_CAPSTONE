@@ -50,7 +50,7 @@ public class MemberViewHolder extends RecyclerView.ViewHolder {
         binding.partyMemberTvId
             .setText(context.getString(R.string.showPartyInfo_btn_member, memberId));
         binding.partyMemberTvId
-            .setBackground(AppCompatResources.getDrawable(context, R.drawable.btn_member));
+            .setBackground(AppCompatResources.getDrawable(context, R.drawable.border));
         break;
     }
   }
