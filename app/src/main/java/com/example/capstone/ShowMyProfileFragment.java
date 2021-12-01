@@ -64,7 +64,7 @@ public class ShowMyProfileFragment extends Fragment {
     private int result=3;
 
     //로그인 된 유저 id
-    protected String id = "IOxZt7qFPxdE93PNtElzSztmYpP2";
+    public String id = "IOxZt7qFPxdE93PNtElzSztmYpP2";
 
 
     // 데이터베이스
