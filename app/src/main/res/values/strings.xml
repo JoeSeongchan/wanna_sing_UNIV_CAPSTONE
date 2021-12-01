@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">capstone</string>
+    <string name="app_name">노래 할래?</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="createGroup_tv_age">%1$d 대</string>
+    <string name="showPartyInfo_tv_memberNum">(%1$d 명 / %2$d 명)</string>
+    <string name="showPartyInfo_tv_partyDate">%1$04d / %2$02d / %3$02d</string>
+    <string name="showPartyInfo_tv_partyTime">%1$02d : %2$02d</string>
+    <string name="showPartyInfo_tv_genderCondition">#성별_%1$s</string>
+    <string name="showPartyInfo_tv_ageCondition">#나이_%1$s</string>
+    <string name="showPartyInfo_tv_genreCondition">#장르_%1$s</string>
+    <string name="showPartyInfo_btn_hostMember">💓 호스트 :  %1$s</string>
+    <string name="showPartyInfo_btn_member">😀 멤버 : %1$s</string>
+    <string name="homePartyItem_tv_timeWarning">※ %1$02d분 이후 모집마감</string>
+    <string name="homePartyItem_tv_startDateTime">%1$02d월%2$02d일 %3$02d:%4$02d</string>
+    <string name="homePartyItem_tv_memberInfo">인원 : %1$d/%2$d</string>
 </resources>

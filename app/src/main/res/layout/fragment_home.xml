@@ -6,16 +6,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/main_et_search"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_toLeftOf="@id/search"
+        android:layout_toLeftOf="@id/main_btn_search"
         android:text="검색"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
     <ImageButton
-        android:id="@+id/search"
+        android:id="@+id/main_btn_search"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/ic_baseline_search_24"
@@ -30,7 +30,7 @@
         android:padding="4dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/main_rv_partyList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="80dp"

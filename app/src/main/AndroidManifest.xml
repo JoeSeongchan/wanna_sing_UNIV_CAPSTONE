@@ -1,66 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.capstone">
+  package="com.android.wannasing">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Capstone">
-        <activity
-            android:name=".SelectUploadOptionActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-            android:name=".FuncRecord"
-            />
-
-        <activity
-            android:name=".ShowMyProfileActivity_NOTUSED"
-            android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".ProfileChangeActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".HomeActivity_NOTUSED"
-            android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".ProfileChangePopup"
-            android:theme="@android:style/Theme.Dialog" >
-
-        </activity>
 
 
 
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.DetailGroupTest">
+    <activity
+      android:name="com.android.wannasing.MainActivity"
+      android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
 
-    </application>
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
+    </activity>
+
+    <activity android:name="com.android.wannasing.creategroup.CreateGroupActivity"
+      android:exported = "true">
+<!--      <intent-filter>-->
+<!--        <action android:name="android.intent.action.MAIN" />-->
+<!--        <category android:name="android.intent.category.LAUNCHER" />-->
+<!--      </intent-filter>-->
+    </activity>
+    <activity android:name="com.android.wannasing.showpartyinfo.ShowPartyInfoActivity"
+      android:exported = "true">
+
+    </activity>
+
+
+      <activity
+          android:name="com.android.wannasing.record.FuncRecord"
+          />
+
+      <activity
+          android:name="com.android.wannasing.profile.ShowMyProfileActivity_UNUSED"
+          android:exported="true">
+
+      </activity>
+
+      <activity
+          android:name="com.android.wannasing.profile.ProfileChangeActivity"
+          android:exported="true">
+
+      </activity>
+
+      <activity
+          android:name="com.android.wannasing.profile.SelectUploadOptionActivity"
+          android:exported="true">
+
+      </activity>
+
+      <activity
+          android:name="com.android.wannasing.profile.ShowYourProfileActivity"
+          android:exported="true">
+      </activity>
+
+
+      <activity
+          android:name="com.android.wannasing.profile.ProfileChangePopup"
+          android:theme="@android:style/Theme.Dialog">
+
+      </activity>
+
+  </application>
+
 </manifest>
