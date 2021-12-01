@@ -50,7 +50,6 @@
             android:name=".HomeActivity"
             android:exported="true">
 
-
         </activity>
 
 

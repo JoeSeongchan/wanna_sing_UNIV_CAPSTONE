@@ -37,6 +37,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -56,8 +57,7 @@ public class HomeFragment extends Fragment {
     private List<GroupDisplay> groupList;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_main, container, false);
-        RecyclerView grouprecyclerView = v.findViewById(R.id.recycler_view);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
         Context context=container.getContext();
         recyclerv(v);
         Log.d("TEST", "Recyclerv");
