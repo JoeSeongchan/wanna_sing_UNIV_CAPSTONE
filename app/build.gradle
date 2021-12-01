@@ -35,11 +35,13 @@ android {
     sourceSets {
         main {
             res {
-                srcDirs 'src\\main\\res', 'src\\main\\res\\layouts\\home', 'src\\main\\res\\layouts\\showpartyinfo', 'src\\main\\res\\layouts\\login'
+                srcDirs 'src\\main\\res',
+                        'src\\main\\res\\layouts\\home',
+                        'src\\main\\res\\layouts\\showpartyinfo',
+                        'src\\main\\res\\layouts\\login', 'src\\main\\res\\layouts\\map'
             }
         }
     }
-
 }
 
 dependencies {
@@ -75,5 +77,14 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.1.2'
 
+    // retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 
+    // Kakao api
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Ted permission
+    implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0'
 }
