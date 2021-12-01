@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="20dp"
+  android:orientation="vertical">
+
+  <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="검색어를 입력하세요"
+          tools:ignore="TouchTargetSizeCheck" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/search_icon"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </TableRow>
+
+  </TableLayout>
+
+  <View
+    android:id="@+id/divider9"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="?android:attr/listDivider" />
+
+  <TextView
+    android:id="@+id/textView23"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="참가조건" />
+
+  <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="*">
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="성별" />
+
+      <Button
+        android:id="@+id/button10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="성별 자유" />
+
+      <Button
+        android:id="@+id/button11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="남자만" />
+
+      <Button
+        android:id="@+id/button12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="여자만" />
+    </TableRow>
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="나이대" />
+
+      <ImageButton
+        android:id="@+id/createGroup_btn_ageLeft"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/arrow_left"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+      <Button
+        android:id="@+id/age"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="나이 자유"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
+      <ImageButton
+        android:id="@+id/createGroup_btn_ageRight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/arrow_right"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </TableRow>
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <Button
+        android:id="@+id/button21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_column="1"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="초반\n(0~3)" />
+
+      <Button
+        android:id="@+id/button22"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="중반\n(4~6)" />
+
+      <Button
+        android:id="@+id/button23"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:text="후반\n(7~9)" />
+    </TableRow>
+
+  </TableLayout>
+
+  <View
+    android:id="@+id/divider10"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="?android:attr/listDivider" />
+
+  <TextView
+    android:id="@+id/textView24"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:text="선호 장르" />
+
+  <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="자유롭게" />
+
+      <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="인기차트" />
+
+      <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="발라드" />
+
+      <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="가요" />
+
+    </TableRow>
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="POP" />
+
+      <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="트로트" />
+
+      <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="힙합" />
+
+      <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="J-POP" />
+    </TableRow>
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <Button
+        android:id="@+id/button24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="장르1" />
+
+      <Button
+        android:id="@+id/button25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="장르2" />
+
+      <Button
+        android:id="@+id/button26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="장르3" />
+
+      <Button
+        android:id="@+id/button27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:text="그 외" />
+    </TableRow>
+
+    <TableRow
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+  </TableLayout>
+
+  <ImageButton
+    android:id="@+id/searchButton2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    app:srcCompat="@drawable/search_icon"
+    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+</LinearLayout>
