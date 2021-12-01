@@ -2,7 +2,11 @@ package com.android.wannasing.map.activity;
 
 import android.Manifest;
 import android.Manifest.permission;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
@@ -16,6 +20,8 @@ import com.android.wannasing.map.model.Place;
 import com.android.wannasing.map.model.ResultSearchKeyword;
 import com.android.wannasing.utilities.Utilities;
 import com.android.wannasing.utilities.Utilities.LogType;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -48,6 +54,29 @@ public class MapActivity extends AppCompatActivity implements MapView.CurrentLoc
     binding = ActivityMapBinding.inflate(getLayoutInflater());
     setContentView(binding.getRoot());
     requestPermissions();
+    getDebugHashKey();
+  }
+
+  private void getDebugHashKey() {
+    PackageInfo packageInfo = null;
+    try {
+      packageInfo = getPackageManager()
+          .getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+      if (packageInfo == null) {
+        Log.e("KeyHash", "KeyHash:null");
+      } else {
+        for (Signature signature : packageInfo.signatures) {
+          MessageDigest md = MessageDigest.getInstance("SHA");
+          md.update(signature.toByteArray());
+          Log.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+        }
+      }
+    } catch (NoSuchAlgorithmException e) {
+      e.printStackTrace();
+    } catch (PackageManager.NameNotFoundException e) {
+      e.printStackTrace();
+    }
+
   }
 
   // 권한 요청하는 함수.
