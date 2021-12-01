@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <TextView
+        android:id="@+id/recordupload"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/usernameback"
+        android:text="녹음"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/audioupload"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout="@+id/record"
+        android:gravity="center"
+        android:background="@drawable/usernameback"
+        android:text="파일 직접 업로드"
+        android:textColor="#333333"
+        android:textSize="35sp" />
+
+
+
+</LinearLayout>
+
+
+
