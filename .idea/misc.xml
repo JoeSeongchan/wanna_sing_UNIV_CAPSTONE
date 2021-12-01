@@ -42,6 +42,12 @@
         <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project-joe_seongchan/app/src/main/res/layouts/home/menu/bottom_nav_menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project-joe_seongchan/app/src/main/res/layouts/showpartyinfo/layout/activity_show_party_info.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project-joe_seongchan/app/src/main/res/layouts/showpartyinfo/layout/item_member_show_party_info.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layout/activity_group_info.xml" value="0.33" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layout/activity_search_group.xml" value="0.33" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layouts/profile/layout/activity_my_profile.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layouts/profile/layout/activity_profile_change.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layouts/profile/layout/activity_your_profile.xml" value="0.2552083333333333" />
+        <entry key="..\:/Users/guyle/Documents/gitkraken_project/capstone-project/app/src/main/res/layouts/profile/layout/popupactivity_change_genre.xml" value="0.2552083333333333" />
         <entry key="..\:/gitkraken_project/capstone_project_peek_other_member/app/src/main/res/layout/activity_create_group.xml" value="0.3619791666666667" />
         <entry key="..\:/gitkraken_project/capstone_project_peek_other_member/app/src/main/res/layout/activity_group_info.xml" value="0.19895833333333332" />
         <entry key="..\:/gitkraken_project/capstone_project_peek_other_member/app/src/main/res/layout/activity_show_party_info.xml" value="0.33" />

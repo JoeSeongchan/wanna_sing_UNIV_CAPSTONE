@@ -62,11 +62,11 @@
                         android:text="모임 모집 현황" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/groupDetailTvMemberNum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAlignment="textEnd"
-                        android:text="( 1 / 5 )" />
+                        android:text="( 1 / 5 )"
+                        android:textAlignment="textEnd" />
 
                 </TableRow>
 

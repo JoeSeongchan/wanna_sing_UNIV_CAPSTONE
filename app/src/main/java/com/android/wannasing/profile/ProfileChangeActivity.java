@@ -21,7 +21,6 @@ public class ProfileChangeActivity extends AppCompatActivity {
         local =  findViewById(R.id.Profchange_ib_local);
         genre =  findViewById(R.id.profchange_ib_genre);
         click();
-
     }
 
 private void click() {
