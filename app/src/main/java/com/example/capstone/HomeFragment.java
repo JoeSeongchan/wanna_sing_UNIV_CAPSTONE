@@ -1,7 +1,5 @@
 package com.example.capstone;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -41,7 +38,7 @@ public class HomeFragment extends Fragment {
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private ShowMyProfileActivity myprofile;
+    private ShowMyProfileActivity_NOTUSED myprofile;
 
     //리사이클러 뷰 관련
     private boolean isScrolling = false;

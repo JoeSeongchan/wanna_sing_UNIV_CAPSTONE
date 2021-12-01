@@ -29,11 +29,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity_NOTUSED extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView; // 바텀 네비게이션 뷰
     private FragmentManager fm;
     private FragmentTransaction ft;
-    private ShowMyProfileActivity myprofile;
+    private ShowMyProfileActivity_NOTUSED myprofile;
 
     //리사이클러 뷰 관련
     private boolean isScrolling = false;

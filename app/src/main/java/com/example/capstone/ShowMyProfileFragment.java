@@ -2,9 +2,7 @@ package com.example.capstone;
 
 import static android.content.ContentValues.TAG;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,13 +14,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,7 +32,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -46,21 +39,14 @@ import java.util.Date;
 import java.util.Optional;
 
 public class ShowMyProfileFragment extends Fragment {
-    private TextView username, userid, mainsinger, song, profile, profilename, evaluate, eval1, eval2, eval3, eval4, favoritesongs;
+    private TextView username, userid, profile,  evaluate, eval1, eval2, eval3, eval4;
     private ImageButton add, option;
 
-    /**xml 변수*/
-    ImageButton audioRecordImageBtn;
-    TextView audioRecordText;
 
     /**오디오 파일 관련 변수*/
 
     // 오디오 파일 녹음 관련 변수
     private Uri audioUri = null; // 오디오 파일 uri
-
-    // 이주엽 수정부분 111111111111111111
-    private File audiofilespath =new File("data/user/0/com.example.capstone/app_recordDir");
-    private File[] audiofiles = audiofilespath.listFiles();
 
     // 오디오 파일 재생 관련 변수
     private MediaPlayer mediaPlayer = null;
@@ -90,9 +76,9 @@ public class ShowMyProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_my_profile, container, false);
-        init(v);
-        showprofile();
-        click();
+        init(v);        //get songdata from firebase storage, fieldviewbyid all button
+        showprofile();  //get extradata from firestore and show
+        click();        //add click listener
         changeprofile();
         return v;
     }
@@ -155,7 +141,6 @@ public class ShowMyProfileFragment extends Fragment {
                 });
 
         // 이주엽 수정부분 22222222222222 리사이클러뷰 보여주기
-
         audioRecyclerView.setAdapter(audioAdapter);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -256,7 +241,7 @@ public class ShowMyProfileFragment extends Fragment {
         option.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), option.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), ProfileChangeActivity.class);
                 startActivity(intent);
             }
         });

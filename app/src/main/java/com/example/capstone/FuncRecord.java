@@ -1,16 +1,25 @@
 package com.example.capstone;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -25,8 +34,11 @@ import java.util.Date;
 
 
 public class FuncRecord extends AppCompatActivity {
-    MediaRecorder recorder;
-    String filePath;
+    private MediaRecorder recorder;
+    private String filePath;
+    private ImageButton record;
+    private TextView recording;
+    private boolean isRecording = false;    // 현재 녹음 상태를 확인하기 위함.
 
     //firebase & id
     private FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -34,25 +46,44 @@ public class FuncRecord extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
+        permissionCheck();
+        init();
+        click();
+    }
 
-        findViewById(R.id.record).setOnClickListener(new View.OnClickListener() {
+    private void init(){
+        record=findViewById(R.id.record_ib_record);
+        recording=findViewById(R.id.record_tv_recordstatus);
+    }
+
+    private void click(){
+        record.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recordAudio();
-            }
-        });
+                if(isRecording==false) {
+                    recordAudio();
+                    record.setImageDrawable(getResources().getDrawable(R.drawable.ic_baseline_stop_24, null));
+                    recording.setText("녹음중..");
+                    recording.setTextColor(Color.parseColor("#FF0000"));
+                    isRecording = true;
+                }
+                else{
+                   stopRecording();
+                   record.setImageDrawable(getResources().getDrawable(R.drawable.ic_record, null));
+                   recording.setText("녹음준비");
+                   recording.setTextColor(Color.parseColor("#8C8C8C"));
+                   isRecording = false;
+                }
 
-        findViewById(R.id.recordStop).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopRecording();
-                finish();
             }
         });
     }
+
+
+
+
 
     private void recordAudio() {
         setupAudio();
@@ -110,10 +141,15 @@ public class FuncRecord extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 }
             });
-
-
-
-
         }
     }
+
+    public void permissionCheck(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1);
+        }
+    }
+
+
 }

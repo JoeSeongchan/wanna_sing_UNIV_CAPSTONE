@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/username"
@@ -29,10 +30,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/username"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/usernameback"
+
             android:text="leejoo"
             android:textColor="#333333"
             android:textSize="20sp" />
@@ -45,8 +47,21 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_baseline_settings_24"
-            android:text="프로필 편집하기" />
+            android:src="@drawable/ic_baseline_settings_24" />
+
+        <TextView
+            android:id="@+id/userprofile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/option"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/borderlinelrt"
+            android:gravity="center"
+            android:text="노래 리스트"
+            android:textColor="#333333"
+            android:textSize="21sp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -56,8 +71,9 @@
             android:layout_below="@id/option"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="43dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/borderlinelr"
             app:layout_constraintBottom_toTopOf="@id/profile"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -65,15 +81,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.018" />
 
-
         <ImageButton
             android:id="@+id/add"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_below="@id/recycler_songs"
-            android:layout_alignParentRight="true"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/borderlineall"
             android:src="@drawable/add_24" />
 
         <TextView
@@ -82,8 +97,8 @@
             android:layout_height="200dp"
             android:layout_below="@id/add"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/usernameback"
             android:text="\n나이: 32\n성별: 남\n활동지역: 흑석\n선호하는 장르: 힙합\n"
@@ -107,8 +122,8 @@
             android:layout_height="420dp"
             android:layout_below="@id/profile"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/usernameback"
             android:text="참여한 모임 수 : 32"

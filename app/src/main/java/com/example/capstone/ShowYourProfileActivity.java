@@ -3,12 +3,15 @@ package com.example.capstone;
 import static android.content.ContentValues.TAG;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,20 +42,12 @@ import java.util.Date;
 import java.util.Optional;
 
 public class ShowYourProfileActivity extends AppCompatActivity {
-    private TextView username, userid,  profile,  eval1, eval2, eval3, eval4;
-
-
-    /**xml 변수*/
-
+    private TextView  userid,  profile,  evaluate, eval1, eval2, eval3, eval4;
 
     /**오디오 파일 관련 변수*/
 
     // 오디오 파일 녹음 관련 변수
     private Uri audioUri = null; // 오디오 파일 uri
-
-    // 이주엽 수정부분 111111111111111111
-    private File audiofilespath =new File("data/user/0/com.example.capstone/app_recordDir");
-    private File[] audiofiles = audiofilespath.listFiles();
 
     // 오디오 파일 재생 관련 변수
     private MediaPlayer mediaPlayer = null;
@@ -69,17 +64,17 @@ public class ShowYourProfileActivity extends AppCompatActivity {
     //나이 계산 관련
     private int result=3;
 
-    //로그인 된 유저 id
-    protected String id = "6kCCwRjSjOa7I4458HvOScFVJ423";
+    //참고하는 유저 id
+    protected String id = "IOxZt7qFPxdE93PNtElzSztmYpP2";
 
 
     // 데이터베이스
     protected FirebaseFirestore db = FirebaseFirestore.getInstance();
     protected FirebaseStorage storage = FirebaseStorage.getInstance();
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        permissionCheck();
         setContentView(R.layout.activity_your_profile);
         init();
         Toast.makeText(this, "init 완료", Toast.LENGTH_SHORT).show();
@@ -90,6 +85,7 @@ public class ShowYourProfileActivity extends AppCompatActivity {
         userid = findViewById(R.id.youract_tv_userid);
         profile = findViewById(R.id.youract_tv_profile);
         recyclerView = findViewById(R.id.youract_recycler_songs);
+        evaluate = findViewById(R.id.youract_tv_evaluate);
         eval1 = findViewById(R.id.youract_tv_eval1c);
         eval2 = findViewById(R.id.youract_tv_eval2c);
         eval3 = findViewById(R.id.youract_tv_eval3c);
@@ -178,7 +174,7 @@ public class ShowYourProfileActivity extends AppCompatActivity {
     }
 
     private void showprofile() {
-        db.collection("user_list")
+        db.collection("user_list")         // to calculate age and add to profile
                 .document(id)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -200,7 +196,7 @@ public class ShowYourProfileActivity extends AppCompatActivity {
                     }
                 });
 
-        db.collection("user_profile")
+        db.collection("user_profile") // extra data show
                 .document(id)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -253,13 +249,8 @@ public class ShowYourProfileActivity extends AppCompatActivity {
         mediaPlayer.stop();
     }
 
-    public void permissionCheck(){
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1);
-        }
-    }
 
 
 
 }
+

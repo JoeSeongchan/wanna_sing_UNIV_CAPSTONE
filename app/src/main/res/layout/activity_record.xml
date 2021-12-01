@@ -2,23 +2,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/record_ib_record"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="116dp"
-        android:text="녹음하기" />
+        android:src="@drawable/ic_record" />
 
-    <Button
-        android:id="@+id/recordStop"
+    <TextView
+        android:id="@+id/record_tv_recordstatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="51dp"
-        android:text="녹음중지" />
+        android:layout_centerInParent="true"
+        android:text="녹음준비"
+        android:textColor="#8C8C8C"
+        android:textSize="80sp" />
+
 </RelativeLayout>
 
 

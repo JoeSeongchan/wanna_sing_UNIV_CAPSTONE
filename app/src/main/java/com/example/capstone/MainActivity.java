@@ -22,12 +22,11 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
     // 4개의 메뉴에 들어갈 Fragment들
-    //private Menu1Fragment menu1Fragment = new Menu1Fragment();
-    private ShowMyProfileFragment menu4Fragment =new ShowMyProfileFragment();
-    private HomeFragment menu1Fragment =new HomeFragment();
-    //private Menu3Fragment menu3Fragment = new Menu3Fragment();
-    //private Menu4Fragment menu4Fragment = new Menu4Fragment();
 
+    private HomeFragment menu1Fragment =new HomeFragment();
+    //private Menu3Fragment menu2Fragment = new Menu2Fragment();
+    //private Menu4Fragment menu3Fragment = new Menu3Fragment();
+    private ShowMyProfileFragment menu4Fragment =new ShowMyProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        switch (item.getItemId()) {
+                        switch (item.getItemId()) { //홈, 그러니까 검색화면
                             case R.id.home_nav: {
                                 transaction.replace(R.id.frame_layout, menu1Fragment).commitAllowingStateLoss();
                                 break;
                             }
                         }
-                        switch (item.getItemId()) {
+                        switch (item.getItemId()) { //프로필 화면
                             case R.id.prof_nav: {
                                 transaction.replace(R.id.frame_layout, menu4Fragment).commitAllowingStateLoss();
                                 break;

@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Optional;
 
-public class ShowMyProfileActivity extends AppCompatActivity {
+public class ShowMyProfileActivity_NOTUSED extends AppCompatActivity {
     private TextView username, userid, mainsinger, song, profile, profilename, evaluate, eval1, eval2, eval3, eval4, favoritesongs;
     private ImageButton add, option;
 
@@ -252,7 +252,7 @@ public class ShowMyProfileActivity extends AppCompatActivity {
         option.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), option.class);
+                Intent intent = new Intent(getApplicationContext(), ProfileChangeActivity.class);
                 startActivity(intent);
             }
         });
