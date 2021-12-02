@@ -35,13 +35,18 @@ android {
     sourceSets {
         main {
             res {
-                srcDirs 'src\\main\\res',
-                        'src\\main\\res\\layouts\\home',
-                        'src\\main\\res\\layouts\\showpartyinfo',
-                        'src\\main\\res\\layouts\\login', 'src\\main\\res\\layouts\\map'
+                srcDirs 'src\\main\\res'
+                srcDirs 'src\\main\\res\\layouts\\home\\fragment\\map'
+                srcDirs 'src\\main\\res\\layouts\\home\\fragment\\partygroup'
+                srcDirs 'src\\main\\res\\layouts\\home\\fragment\\profile'
+                srcDirs 'src\\main\\res\\layouts\\home\\fragment\\manager'
+                srcDirs 'src\\main\\res\\layouts\\login'
+                srcDirs 'src\\main\\res\\layouts\\party\\creating'
+                srcDirs 'src\\main\\res\\layouts\\party\\showinginfo'
             }
         }
     }
+
 }
 
 dependencies {

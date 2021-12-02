@@ -10,10 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.wannasing.databinding.ActivityLoginBinding;
 import com.android.wannasing.db.entity.User;
-import com.android.wannasing.firedb.FireDb;
-import com.android.wannasing.firedb.FireDbLifeCycleManager;
-import com.android.wannasing.home.HomeActivity;
-import com.android.wannasing.login.login.input.TextWatcherSetterForLogin;
+import com.android.wannasing.db.firedb.FireDb;
+import com.android.wannasing.db.firedb.FireDbLifeCycleManager;
+import com.android.wannasing.home.fragment.manager.ManagingFragmentInHomeActivity;
+import com.android.wannasing.login.login.input.checking.TextWatcherSetterForLogin;
 import com.android.wannasing.login.register.RegisterActivity;
 import com.android.wannasing.utilities.Utilities;
 import com.android.wannasing.utilities.Utilities.LogType;
@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setUi();
     setDb();
-    authDb.signOut();
     moveToNextAct();
   }
 
@@ -109,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
   private void moveToNextAct() {
     Optional<FirebaseUser> opCurrentUser = Optional.ofNullable(authDb.getCurrentUser());
     if (opCurrentUser.isPresent()) {
-      Intent intent = new Intent(this, HomeActivity.class);
+      Intent intent = new Intent(this, ManagingFragmentInHomeActivity.class);
       userFireDb.getData(String.valueOf(Objects.hash(opCurrentUser.get().getUid())))
           .subscribe(opUser -> {
             if (opUser.isPresent()) {

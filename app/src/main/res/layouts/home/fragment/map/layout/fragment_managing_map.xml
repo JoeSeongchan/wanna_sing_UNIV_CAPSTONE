@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/map_rl_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="198dp"
+    tools:layout_editor_absoluteY="16dp">
+
+  </RelativeLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <ImageButton
+      android:id="@+id/map_btn_search"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:layout_gravity="end"
+
+      android:background="@android:color/transparent"
+      android:contentDescription="Android logo"
+      android:padding="0sp"
+      android:scaleType="centerCrop"
+      android:src="@drawable/search_icon"
+      tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

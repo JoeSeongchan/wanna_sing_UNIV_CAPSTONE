@@ -20,40 +20,25 @@
 
 
     <activity
-      android:name="com.android.wannasing.MainActivity"
-      android:exported="true">
-
-    </activity>
-
-    <activity
-      android:name="com.android.wannasing.creategroup.CreateGroupActivity"
+      android:name="com.android.wannasing.party.creating.CreatingGroupActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.showpartyinfo.ShowPartyInfoActivity"
+      android:name="com.android.wannasing.party.showinginfo.ShowingPartyInfoActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.home.HomeActivity"
+      android:name="com.android.wannasing.home.fragment.manager.ManagingFragmentInHomeActivity"
       android:exported="true" />
     <activity
       android:name="com.android.wannasing.login.login.LoginActivity"
-      android:exported="true">
-      <!--      <intent-filter>-->
-      <!--        <action android:name="android.intent.action.MAIN" />-->
-      <!--        <category android:name="android.intent.category.LAUNCHER" />-->
-      <!--      </intent-filter>-->
-    </activity>
-    <activity
-      android:name="com.android.wannasing.login.register.RegisterActivity"
-      android:exported="false" />
-
-    <activity
-      android:name="com.android.wannasing.map.activity.MapActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity
+      android:name="com.android.wannasing.login.register.RegisterActivity"
+      android:exported="false" />
 
     <meta-data
       android:name="com.kakao.sdk.AppKey"
