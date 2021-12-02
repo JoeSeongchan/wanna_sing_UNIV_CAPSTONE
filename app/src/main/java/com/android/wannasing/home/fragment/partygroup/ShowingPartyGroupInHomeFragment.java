@@ -34,7 +34,7 @@ public class ShowingPartyGroupInHomeFragment extends Fragment implements
   private PartyGroupInHomeViewModel viewModel;
   private View rootView;
 
-  private ShowingPartyGroupInHomeFragment() {
+  public ShowingPartyGroupInHomeFragment() {
   }
 
   public static ShowingPartyGroupInHomeFragment newInstance() {

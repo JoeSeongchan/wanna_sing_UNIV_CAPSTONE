@@ -7,7 +7,7 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
   <application
     android:allowBackup="true"
@@ -39,6 +39,22 @@
     <activity
       android:name="com.android.wannasing.login.register.RegisterActivity"
       android:exported="false" />
+
+    <activity
+      android:name="com.android.wannasing.home.fragment.myprofile.audio.recording.RecordingAudioActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.home.fragment.myprofile.audio.uploading.SelectingUploadOptionActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.home.fragment.myprofile.changing.ChangingMyProfileActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.home.fragment.myprofile.changing.GettingInputForChangingMyProfileActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.profile.others.ShowOthersProfileActivity"
+      android:exported="true" />
 
     <meta-data
       android:name="com.kakao.sdk.AppKey"

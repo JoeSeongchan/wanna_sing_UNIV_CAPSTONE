@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
       userFireDb.getData(String.valueOf(Objects.hash(opCurrentUser.get().getUid())))
           .subscribe(opUser -> {
             if (opUser.isPresent()) {
-              intent.putExtra("USER", opUser.get());
+              intent.putExtra("USER_INFO", opUser.get());
               startActivity(intent);
               finish();
             } else {

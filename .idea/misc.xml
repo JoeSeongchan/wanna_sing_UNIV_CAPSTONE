@@ -37,6 +37,24 @@
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layout/search_group.xml" value="0.3619791666666667" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layout/view_btn_member.xml" value="0.3619791666666667" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/creating_party/layout/activity_creating_party.xml" value="0.1" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/manager/layout/activity_managing_fragment_in_home.xml" value="0.3619791666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/recording/drawable/recording_audio_btn_pause_icon.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/recording/drawable/recording_audio_btn_play.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/recording/drawable/recording_audio_btn_record.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/recording/drawable/recording_audio_btn_stop_icon.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/recording/layout/item_audio.xml" value="0.31290322580645163" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/uploading/drawable/uploading_audio_btn_background.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/audio/uploading/layout/activity_selecting_upload_option.xml" value="0.35052083333333334" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/changing/drawable/changing_my_profile_btn_background.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/changing/layout/activity_changing_profile.xml" value="0.34791666666666665" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/changing/layout/activity_getting_input_for_changing_profile.xml" value="0.34791666666666665" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/show_my_profile_btn_stop_icon.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/showing_my_profile_background.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/showing_my_profile_border.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/showing_my_profile_btn_add_icon.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/showing_my_profile_btn_setting_background.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/drawable/showing_my_profile_tvBackground.xml" value="0.2111111111111111" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/myprofile/showing/layout/activity_showing_my_profile.xml" value="0.3444976076555024" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragment/partygroup/layout/fragment_showing_party_group_in_home.xml" value="0.23697916666666666" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragmentmanager/drawable/home_refresh.xml" value="0.378125" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/home/fragmentmanager/layout/activity_fragment_manager.xml" value="0.359375" />
@@ -72,6 +90,7 @@
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/partyinfo/drawable/btn_host_member.xml" value="0.3723076923076923" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/partyinfo/drawable/btn_member.xml" value="0.3723076923076923" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/partyinfo/drawable/create_party_arrow_left.xml" value="0.3723076923076923" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/profile/others/layout/activity_showing_others_profile.xml" value="0.23645833333333333" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/showpartyinfo/drawable/btn_host_member.xml" value="0.21822916666666667" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/showpartyinfo/layout/activity_show_party_info.xml" value="0.184375" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/showpartyinfo/layout/item_member_show_party_info.xml" value="0.184375" />

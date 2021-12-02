@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="80dp"
+  android:layout_marginBottom="10dp"
+  android:gravity="center_vertical">
+
+  <ImageButton
+    android:id="@+id/itemAudio_btn_play"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:src="@drawable/recording_audio_btn_record_icon" />
+
+  <TextView
+    android:id="@+id/itemAudio_tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20sp" />
+
+</LinearLayout>

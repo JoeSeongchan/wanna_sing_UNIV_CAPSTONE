@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class User implements Serializable, Entity {
 
+  public static final User DUMMY_USER = new User();
   @NonNull
   private String name = "def_name";
   @NonNull

@@ -44,7 +44,7 @@ public class ManagingMapFragment extends Fragment implements
 
   private View rootView;
 
-  private ManagingMapFragment() {
+  public ManagingMapFragment() {
   }
 
   public static ManagingMapFragment newInstance() {
@@ -120,7 +120,9 @@ public class ManagingMapFragment extends Fragment implements
   @Override
   public void onDestroy() {
     super.onDestroy();
-    mapViewContainer.removeAllViews();
+    if (mapViewContainer != null) {
+      mapViewContainer.removeAllViews();
+    }
   }
 
   @Override
