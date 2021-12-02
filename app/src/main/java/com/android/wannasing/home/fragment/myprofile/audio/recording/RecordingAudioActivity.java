@@ -75,7 +75,6 @@ public class RecordingAudioActivity extends AppCompatActivity {
         recording.setTextColor(Color.parseColor("#8C8C8C"));
         isRecording = false;
       }
-
     });
   }
 

@@ -43,7 +43,7 @@ public class ShowingPartyInfoActivity extends AppCompatActivity implements
   public void getPartyInfoFromFormerActivity() {
     party = Optional
         .ofNullable(getIntent()).map(Intent::getExtras)
-        .map(bundle -> (Party) bundle.getSerializable("SELECTED_PARTY"))
+        .map(bundle -> (Party) bundle.getSerializable("SELECTED_PARTY_INFO"))
         .orElseGet(() -> {
           List<Genre> genreList = new ArrayList<>();
           genreList.add(Genre.FREE);

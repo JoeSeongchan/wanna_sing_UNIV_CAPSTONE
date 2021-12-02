@@ -60,22 +60,18 @@ public class DetailInfo extends DialogFragment {
     builder.setView(view);
 
     view.findViewById(R.id.showKaraokeInfo_btn_createParty)
-        .setOnClickListener(new View.OnClickListener() {
-          public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), CreatingGroupActivity.class);
-            intent.putExtra("KaraokeID", karaokeId);
-            intent.putExtra("KaraokeNAME", title_s);
-            startActivity(intent);
-          }
+        .setOnClickListener(v -> {
+          Intent intent = new Intent(getActivity(), CreatingGroupActivity.class);
+          intent.putExtra("KaraokeID", karaokeId);
+          intent.putExtra("KaraokeNAME", title_s);
+          startActivity(intent);
         });
 
     view.findViewById(R.id.showKaraokeInfo_btn_showPartyList)
-        .setOnClickListener(new View.OnClickListener() {
-          public void onClick(View v) {
+        .setOnClickListener(v -> {
 //            Intent intent = new Intent(getActivity(), 해당노래방에서열리는모임만보여주는클래스.class);
 //            intent.putExtra("KaraokeID", karaokeId);
 //            startActivity(intent);
-          }
         });
 
     return builder.create();

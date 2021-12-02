@@ -16,34 +16,49 @@ import com.android.wannasing.party.showinginfo.ShowingPartyInfoActivity;
 
 public class ManagingFragmentInHomeActivity extends AppCompatActivity {
 
+  // fragment.
   private ManagingMapFragment managingMapFragment;
   private ShowingPartyGroupInHomeFragment showingPartyGroupInHomeFragment;
   private ShowingMyProfileFragment showingMyProfileFragment;
+
   private FragmentManager fragmentManager;
 
   private ActivityManagingFragmentInHomeBinding binding;
+
+  // Login Activity 로부터 받은 유저 데이터.
   private User user;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     binding = ActivityManagingFragmentInHomeBinding.inflate(getLayoutInflater());
+
     setContentView(binding.getRoot());
     getUserInfoFromLoginActivity();
+    setUpFragment();
+  }
+
+  private void setUpFragment() {
     fragmentManager = getSupportFragmentManager();
     showingPartyGroupInHomeFragment = ShowingPartyGroupInHomeFragment.newInstance();
-    // 첫 화면 지정
+
+    // 첫 화면 : 파티 리스트 보여주는 fragment.
     FragmentTransaction transaction = fragmentManager.beginTransaction();
     transaction.replace(R.id.manageFragments_fcv_fragmentContainer, showingPartyGroupInHomeFragment)
         .commitAllowingStateLoss();
-    setBottomNav();
 
+    setUpBottomNav();
+    setFragmentResultListener();
+  }
+
+  private void setFragmentResultListener() {
+    // 파티 리스트에서 특정 아이템 선택한 경우, 파티 세부 정보 Activity 로 전환.
     getSupportFragmentManager()
         .setFragmentResultListener("PARTY_GROUP", this, (requestKey, result) -> {
-          Party party = (Party) result.getSerializable("PARTY_INFO");
+          Party party = (Party) result.getSerializable("SELECTED_PARTY_INFO");
           Intent intent = new Intent(this, ShowingPartyInfoActivity.class);
           Bundle bundle = new Bundle();
-          bundle.putSerializable("SELECTED_PARTY", party);
+          bundle.putSerializable("SELECTED_PARTY_INFO", party);
           intent.putExtras(bundle);
           startActivity(intent);
         });
@@ -53,7 +68,7 @@ public class ManagingFragmentInHomeActivity extends AppCompatActivity {
     this.user = (User) getIntent().getSerializableExtra("USER_INFO");
   }
 
-  private void setBottomNav() {
+  private void setUpBottomNav() {
     // bottomNavigationView의 아이템이 선택될 때 호출될 리스너 등록
     binding.manageFragmentsBnvBottomNavi.setOnItemSelectedListener(
         item -> {

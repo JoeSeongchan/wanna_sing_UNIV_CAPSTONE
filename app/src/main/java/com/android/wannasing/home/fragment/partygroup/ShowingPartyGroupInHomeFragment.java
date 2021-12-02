@@ -79,7 +79,7 @@ public class ShowingPartyGroupInHomeFragment extends Fragment implements
 
   private void informActivityWhichPartyIsClicked(Party party) {
     Bundle result = new Bundle();
-    result.putSerializable("PARTY_INFO", party);
+    result.putSerializable("SELECTED_PARTY_INFO", party);
     getParentFragmentManager()
         .setFragmentResult("PARTY_GROUP", result);
   }

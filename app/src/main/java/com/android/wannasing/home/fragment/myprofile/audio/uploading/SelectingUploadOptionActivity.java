@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.provider.OpenableColumns;
 import android.util.Log;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.wannasing.R;
 import com.android.wannasing.home.fragment.myprofile.audio.recording.RecordingAudioActivity;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -60,21 +58,11 @@ public class SelectingUploadOptionActivity extends AppCompatActivity {
       StorageReference r_ref = s_ref.child(userid + "/" + returnCursor.getString(nameIndex));
       Log.d("upload", "뭐야이건" + returnCursor.getString(nameIndex));
       UploadTask uploadTask = r_ref.putFile((fileUri));
-      uploadTask.addOnFailureListener(new OnFailureListener() {
-        @Override
-        public void onFailure(@NonNull Exception exception) {
-          Log.d("upload", exception.getMessage());
-        }
-      }).addOnSuccessListener(taskSnapshot -> {
-      });
-
-
+      uploadTask.addOnFailureListener(exception -> Log.d("upload", exception.getMessage()))
+          .addOnSuccessListener(taskSnapshot -> {
+          });
     }
-
-
   }
-
-
 }
 
 
