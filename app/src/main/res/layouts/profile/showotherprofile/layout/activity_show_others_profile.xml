@@ -1,0 +1,190 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/ScrollView1"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true">
+
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/youract_tv_userid"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="15dp"
+      android:layout_marginEnd="20dp"
+      android:text="leejoo"
+      android:textColor="#333333"
+      android:textSize="20sp" />
+
+    <TextView
+      android:id="@+id/userprofile"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/youract_tv_userid"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="15dp"
+      android:layout_marginEnd="20dp"
+      android:background="@drawable/show_my_profile_view_border"
+      android:gravity="center"
+      android:text="노래 리스트"
+      android:textColor="#333333"
+      android:textSize="21sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/youract_recycler_songs"
+      android:layout_width="match_parent"
+      android:layout_height="400dp"
+      android:layout_below="@id/youract_tv_userid"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="20dp"
+      android:background="@drawable/show_my_profile_view_border"
+      app:layout_constraintBottom_toTopOf="@id/youract_tv_profile"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.018" />
+
+
+    <TextView
+      android:id="@+id/youract_tv_profile"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:layout_below="@id/youract_recycler_songs"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginEnd="20dp"
+      android:text="\n나이: 32\n성별: 남\n활동지역: 흑석\n선호하는 장르: 힙합\n"
+      android:textColor="#333333"
+      android:textSize="25sp" />
+
+    <TextView
+      android:id="@+id/youract_tv_profilename"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@id/youract_tv_profile"
+      android:layout_centerHorizontal="true"
+      android:text="Profile"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+
+
+    <TextView
+      android:id="@+id/youract_tv_evaluate"
+      android:layout_width="match_parent"
+      android:layout_height="420dp"
+      android:layout_below="@id/youract_tv_profile"
+      android:layout_centerHorizontal="true"
+      android:layout_marginStart="20dp"
+      android:layout_marginTop="20dp"
+      android:layout_marginEnd="20dp"
+      android:text="참여한 모임 수 : 32"
+      android:textColor="#333333"
+      android:textSize="25sp" />
+
+    <ImageView
+      android:id="@+id/eval1"
+      android:layout_width="145dp"
+      android:layout_height="145dp"
+      android:layout_below="@id/youract_tv_profile"
+      android:layout_alignLeft="@id/youract_tv_evaluate"
+      android:layout_marginLeft="30dp"
+      android:layout_marginTop="80dp"
+      android:background="@drawable/show_my_profile_evaluation_type_1" />
+
+    <TextView
+      android:id="@+id/youract_tv_eval1c"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@id/youract_tv_evaluate"
+      android:layout_alignBottom="@id/eval1"
+      android:layout_marginLeft="85dp"
+      android:layout_marginBottom="10dp"
+      android:text="32"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+
+
+    <ImageView
+      android:id="@+id/eval2"
+      android:layout_width="145dp"
+      android:layout_height="145dp"
+      android:layout_below="@id/youract_tv_profile"
+      android:layout_alignRight="@id/youract_tv_evaluate"
+      android:layout_marginTop="80dp"
+      android:layout_marginRight="30dp"
+      android:background="@drawable/show_my_profile_evaluation_type_2" />
+
+    <TextView
+      android:id="@+id/youract_tv_eval2c"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignRight="@id/youract_tv_evaluate"
+      android:layout_alignBottom="@id/eval1"
+      android:layout_marginRight="85dp"
+      android:layout_marginBottom="10dp"
+      android:text="32"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+
+
+    <ImageView
+      android:id="@+id/eval3"
+      android:layout_width="145dp"
+      android:layout_height="145dp"
+      android:layout_below="@id/eval1"
+      android:layout_alignLeft="@id/youract_tv_evaluate"
+      android:layout_marginLeft="30dp"
+      android:layout_marginTop="30dp"
+      android:background="@drawable/show_my_profile_evaluation_type_3" />
+
+    <TextView
+      android:id="@+id/youract_tv_eval3c"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignLeft="@id/youract_tv_evaluate"
+      android:layout_alignBottom="@id/eval3"
+      android:layout_marginLeft="85dp"
+      android:layout_marginBottom="10dp"
+      android:text="32"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+
+    <ImageView
+      android:id="@+id/eval4"
+      android:layout_width="145dp"
+      android:layout_height="145dp"
+      android:layout_below="@id/eval2"
+      android:layout_alignRight="@id/youract_tv_evaluate"
+      android:layout_marginTop="30dp"
+      android:layout_marginRight="30dp"
+      android:background="@drawable/show_my_profile_evaluation_type_1" />
+
+    <TextView
+      android:id="@+id/youract_tv_eval4c"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignRight="@id/youract_tv_evaluate"
+      android:layout_alignBottom="@id/eval3"
+      android:layout_marginRight="85dp"
+      android:layout_marginBottom="10dp"
+      android:text="32"
+      android:textColor="#333333"
+      android:textSize="30sp" />
+
+
+  </RelativeLayout>
+
+
+</ScrollView>
+

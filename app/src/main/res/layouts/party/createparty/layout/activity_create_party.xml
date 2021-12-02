@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="모임 제목" />
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/createParty_til_groupTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/createParty_et_groupTitle"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="모임 제목을 입력해주세요!" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="?android:attr/listDivider" />
+
+      <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="선호 장르" />
+
+      <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreFree"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="자유롭게"
+            android:textColor="@color/black" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreTop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="인기차트" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreBalad"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="발라드" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreNormalSong"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="가요" />
+
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genrePop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="POP" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreOldSong"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="트로트" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreHiphop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="힙합" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreJpop"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="J-POP" />
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genreOther"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/selector_button"
+            android:text="그 외" />
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+      </TableLayout>
+
+      <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="?android:attr/listDivider" />
+
+      <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="참가조건" />
+
+      <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="성별" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genderFree"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="성별 자유" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genderMale"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="남자만" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_genderFemale"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="여자만" />
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="나이대" />
+
+          <ImageButton
+            android:id="@+id/createParty_btn_ageLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/create_party_arrow_left"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+          <TextView
+            android:id="@+id/createParty_tv_age"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="나이 자유"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+
+          <ImageButton
+            android:id="@+id/createParty_btn_ageRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/create_party_arrow_right"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_ageEarly"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_column="1"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="초반\n(0~3)" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_ageMid"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="중반\n(4~6)" />
+
+          <android.widget.Button
+            android:id="@+id/createParty_btn_ageLate"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="후반\n(7~9)" />
+        </TableRow>
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <TextView
+            android:id="@+id/textView17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="모임 인원 수" />
+
+          <ImageButton
+            android:id="@+id/createParty_btn_memberNumLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/create_party_arrow_left"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+          <TextView
+            android:id="@+id/createParty_tv_memMaxNum"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:text="2명"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+
+          <ImageButton
+            android:id="@+id/createParty_btn_memberNumRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/create_party_arrow_right"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        </TableRow>
+      </TableLayout>
+
+      <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="?android:attr/listDivider" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/textView7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="모임 장소" />
+
+        <TextView
+          android:id="@+id/textView6"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="노래방 이름"
+          android:textAlignment="textEnd" />
+      </LinearLayout>
+
+      <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+          android:id="@+id/textView9"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="모임 날짜" />
+
+        <Button
+          android:id="@+id/createParty_btn_selectDate"
+          style="?android:borderlessButtonStyle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="날짜 선택"
+          android:textAlignment="textEnd"
+          android:textColor="@color/black"
+          tools:ignore="MissingConstraints" />
+
+      </LinearLayout>
+
+      <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="5dp"
+        android:background="?android:attr/listDivider" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/textView10"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="모임 진행 시간" />
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시작 시간" />
+
+          <Button
+            android:id="@+id/createParty_btn_selectStartTime"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시작 시간 선택"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료 시간" />
+
+          <Button
+            android:id="@+id/createParty_btn_selectEndTime"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="종료 시간 선택"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            tools:ignore="MissingConstraints" />
+        </LinearLayout>
+      </LinearLayout>
+
+      <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+      <Button
+        android:id="@+id/createParty_btn_createParty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="방 만들기" />
+
+      <TextView
+        android:id="@+id/createParty_tv_errorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="에러메세지 테스트" />
+
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

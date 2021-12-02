@@ -20,16 +20,16 @@
 
 
     <activity
-      android:name="com.android.wannasing.party.creating.CreatingGroupActivity"
+      android:name="com.android.wannasing.feature.party.createparty.viewcontroller.CreatePartyActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.party.showinginfo.ShowingPartyInfoActivity"
+      android:name="com.android.wannasing.feature.party.showpartyinfo.viewcontroller.ShowPartyInfoActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.home.fragment.manager.ManagingFragmentInHomeActivity"
+      android:name="com.android.wannasing.feature.home.viewcontroller.HomeActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.login.login.LoginActivity"
+      android:name="com.android.wannasing.feature.account.login.viewcontroller.LoginActivity"
       android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -37,23 +37,23 @@
       </intent-filter>
     </activity>
     <activity
-      android:name="com.android.wannasing.login.register.RegisterActivity"
+      android:name="com.android.wannasing.feature.account.register.viewcontroller.RegisterActivity"
       android:exported="false" />
 
     <activity
-      android:name="com.android.wannasing.home.fragment.myprofile.audio.recording.RecordingAudioActivity"
+      android:name="com.android.wannasing.feature.audio.recordaudio.viewcontroller.RecordAudioActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.home.fragment.myprofile.audio.uploading.SelectingUploadOptionActivity"
+      android:name="com.android.wannasing.feature.audio.uploadaudio.viewcontroller.SelectingUploadOptionActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.home.fragment.myprofile.changing.ChangingMyProfileActivity"
+      android:name="com.android.wannasing.feature.profile.editprofile.viewcontroller.EditProfileActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.home.fragment.myprofile.changing.GettingInputForChangingMyProfileActivity"
+      android:name="com.android.wannasing.feature.profile.editprofile.viewcontroller.GetNewProfileActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.profile.others.ShowOthersProfileActivity"
+      android:name="com.android.wannasing.feature.profile.showothersprofile.viewcontroller.ShowOthersProfileActivity"
       android:exported="true" />
 
     <meta-data

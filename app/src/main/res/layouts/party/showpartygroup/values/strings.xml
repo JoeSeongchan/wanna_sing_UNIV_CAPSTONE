@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="partyItem_tv_timeWarning">※ %1$02d분 이후 모집마감</string>
+  <string name="partyItem_tv_startDateTime">%1$02d월%2$02d일 %3$02d:%4$02d</string>
+  <string name="partyItem_tv_memberInfo">인원 : %1$d/%2$d</string>
+</resources>
