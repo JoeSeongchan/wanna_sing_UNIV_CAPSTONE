@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/cl_oneItem_yourChat"
+  style="@style/ll_oneItem_chat">
+
+  <TextView
+    android:id="@+id/tv_nickName_yourChat"
+    style="@style/tv_nickName_chat"
+    android:text="@string/tv_nickName_chat"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/tv_msg_yourChat"
+    style="@style/tv_msg_chat"
+    android:background="@drawable/bubble_left_tail"
+    android:paddingStart="15dp"
+    android:paddingEnd="10dp"
+    android:text="@string/tv_msg_chat"
+    android:textColor="@color/blackTextColor"
+    app:layout_constraintRight_toRightOf="@id/tv_nickName_yourChat"
+    app:layout_constraintTop_toBottomOf="@id/tv_nickName_yourChat" />
+
+  <TextView
+    android:id="@+id/tv_date_yourChat"
+    style="@style/tv_date_chat"
+    android:layout_marginStart="5dp"
+    android:gravity="end"
+    android:text="@string/tv_date_chat"
+    app:layout_constraintBottom_toBottomOf="@id/tv_msg_yourChat"
+    app:layout_constraintStart_toEndOf="@id/tv_msg_yourChat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

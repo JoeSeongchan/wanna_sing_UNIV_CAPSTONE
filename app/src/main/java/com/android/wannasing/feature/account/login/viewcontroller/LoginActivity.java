@@ -9,9 +9,9 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.wannasing.common.model.User;
+import com.android.wannasing.common.viewcontroller.FireDb;
+import com.android.wannasing.common.viewcontroller.ServerDbLifeCycleManager;
 import com.android.wannasing.databinding.ActivityLoginBinding;
-import com.android.wannasing.db.FireDb;
-import com.android.wannasing.db.FireDbLifeCycleManager;
 import com.android.wannasing.feature.account.register.viewcontroller.RegisterActivity;
 import com.android.wannasing.feature.home.viewcontroller.HomeActivity;
 import com.android.wannasing.utility.Utilities;
@@ -60,10 +60,10 @@ public class LoginActivity extends AppCompatActivity {
   private void setDb() {
     authDb = FirebaseAuth.getInstance();
 
-    FireDbLifeCycleManager fireDbLifeCycleManager = new FireDbLifeCycleManager();
-    getLifecycle().addObserver(fireDbLifeCycleManager);
+    ServerDbLifeCycleManager serverDbLifeCycleManager = new ServerDbLifeCycleManager();
+    getLifecycle().addObserver(serverDbLifeCycleManager);
     userFireDb = new FireDb<>("user_list", User.class);
-    fireDbLifeCycleManager.add(userFireDb);
+    serverDbLifeCycleManager.add(userFireDb);
   }
 
   private void signUp(@NonNull View view) {

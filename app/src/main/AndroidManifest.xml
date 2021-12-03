@@ -44,7 +44,7 @@
       android:name="com.android.wannasing.feature.audio.recordaudio.viewcontroller.RecordAudioActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.feature.audio.uploadaudio.viewcontroller.SelectingUploadOptionActivity"
+      android:name="com.android.wannasing.feature.audio.uploadaudio.viewcontroller.SetUploadOptionActivity"
       android:exported="true" />
     <activity
       android:name="com.android.wannasing.feature.profile.editprofile.viewcontroller.EditProfileActivity"
@@ -54,6 +54,12 @@
       android:exported="true" />
     <activity
       android:name="com.android.wannasing.feature.profile.showothersprofile.viewcontroller.ShowOthersProfileActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.feature.chat.showchat.viewcontroller.ChatActivity"
+      android:exported="true" />
+    <activity
+      android:name="com.android.wannasing.feature.chat.showchatgroup.viewcontroller.ChatGroupActivity"
       android:exported="true" />
 
     <meta-data

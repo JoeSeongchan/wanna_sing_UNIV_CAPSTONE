@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/clRegister"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/chatRoomBackground"
+  android:orientation="vertical"
+  android:weightSum="1"
+  tools:context=".feature.chat.showchat.viewcontroller.ChatActivity">
+  <!--채팅 데이터 표시
+  입력창 높이 80dp 제외한 모든 높이 다 가져감.
+  -->
+  <!--onBindViewHodler에서 받아온 닉네임을 비교하여 메세지를 정렬한다.-->
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:scrollbars="vertical"
+    app:reverseLayout="false"
+    app:stackFromEnd="true"
+    tools:listitem="@layout/my_chat" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:weightSum="1">
+    <!--채팅 메시지 입력창
+    버튼 폭 80dp 제외한 모든 폭 다 가져감.
+    -->
+    <EditText
+      android:id="@+id/et_msg_chat"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:hint="채팅 메시지를 입력하세요."
+      android:imeOptions="actionNext"
+      android:inputType="textMultiLine|textNoSuggestions"
+      android:maxLines="5" />
+
+    <Button
+      android:id="@+id/button_send"
+      android:layout_width="80dp"
+      android:layout_height="match_parent"
+      android:onClick="sendMsg"
+      android:text="전송" />
+  </LinearLayout>
+</LinearLayout>

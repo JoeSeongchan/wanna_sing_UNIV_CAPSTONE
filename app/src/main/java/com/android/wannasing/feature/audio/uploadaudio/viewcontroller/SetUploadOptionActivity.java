@@ -14,7 +14,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-class SetUploadOptionActivity extends AppCompatActivity {
+public class SetUploadOptionActivity extends AppCompatActivity {
 
   private TextView direct, record;
   private FirebaseStorage storage = FirebaseStorage.getInstance();

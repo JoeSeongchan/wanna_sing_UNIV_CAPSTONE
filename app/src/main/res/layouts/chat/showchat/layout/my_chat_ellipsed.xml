@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/cl_oneItem_myElChat"
+  style="@style/ll_oneItem_chat">
+
+  <TextView
+    android:id="@+id/tv_nickName_myElChat"
+    style="@style/tv_nickName_chat"
+    android:text="@string/tv_nickName_chat"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <LinearLayout
+    android:id="@+id/ll_subItem_myElChat"
+    style="@style/ll_subItem_chat"
+    android:layout_gravity="end"
+    android:background="@drawable/bubble_right_tail"
+    app:layout_constraintRight_toRightOf="@id/tv_nickName_myElChat"
+    app:layout_constraintTop_toBottomOf="@id/tv_nickName_myElChat">
+
+    <TextView
+      android:id="@+id/tv_msg_myElChat"
+      style="@style/tv_msg_chat"
+      android:paddingStart="10dp"
+      android:paddingEnd="15dp"
+      android:text="@string/tv_msg_chat"
+      app:layout_constraintRight_toRightOf="@id/tv_nickName_myElChat"
+      app:layout_constraintTop_toBottomOf="@id/tv_nickName_myElChat" />
+
+    <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btn_fullText_myElChat"
+      style="@style/btn_fullText_elChat"
+      android:layout_gravity="start"
+      android:text="@string/btn_fullText_elChat" />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tv_date_myElChat"
+    style="@style/tv_date_chat"
+    android:layout_marginEnd="5dp"
+    android:gravity="end"
+    android:text="@string/tv_date_chat"
+    app:layout_constraintBottom_toBottomOf="@id/ll_subItem_myElChat"
+    app:layout_constraintEnd_toStartOf="@id/ll_subItem_myElChat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

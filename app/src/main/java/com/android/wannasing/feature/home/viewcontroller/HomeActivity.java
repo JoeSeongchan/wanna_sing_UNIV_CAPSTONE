@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.android.wannasing.R;
 import com.android.wannasing.common.model.User;
 import com.android.wannasing.databinding.ActivityHomeBinding;
+import com.android.wannasing.feature.chat.showchatgroup.viewcontroller.ChatGroupActivity;
 import com.android.wannasing.feature.map.viewcontroller.ManagingMapFragment;
 import com.android.wannasing.feature.party.common.model.Party;
 import com.android.wannasing.feature.party.showpartygroup.viewcontroller.ShowPartyGroupFragment;
@@ -82,6 +83,11 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.prof_nav:
               showFragment(FragmentType.SHOW_MY_PROFILE);
               break;
+            case R.id.chat_nav:
+              Intent intent = new Intent(this, ChatGroupActivity.class);
+              intent.putExtra("USER_NICK", user.getNick());
+              intent.putExtra("GROUP_ID", "dummy_group_id");
+              startActivity(intent);
           }
           return true;
         }

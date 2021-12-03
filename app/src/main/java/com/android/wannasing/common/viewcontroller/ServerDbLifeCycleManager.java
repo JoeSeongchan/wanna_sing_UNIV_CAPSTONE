@@ -1,4 +1,4 @@
-package com.android.wannasing.db;
+package com.android.wannasing.common.viewcontroller;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
@@ -6,21 +6,21 @@ import androidx.lifecycle.LifecycleOwner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FireDbLifeCycleManager implements DefaultLifecycleObserver {
+public class ServerDbLifeCycleManager implements DefaultLifecycleObserver {
 
-  List<FireDb<?>> fireDbList;
+  List<FireDb<?>> serverDb;
 
-  public FireDbLifeCycleManager() {
-    fireDbList = new ArrayList<>();
+  public ServerDbLifeCycleManager() {
+    serverDb = new ArrayList<>();
   }
 
   public void add(FireDb<?> serverDb) {
-    fireDbList.add(serverDb);
+    this.serverDb.add(serverDb);
   }
 
   @Override
   public void onDestroy(@NonNull LifecycleOwner owner) {
-    for (FireDb<?> serverDb : fireDbList) {
+    for (FireDb<?> serverDb : serverDb) {
       serverDb.turnOffListener();
     }
   }

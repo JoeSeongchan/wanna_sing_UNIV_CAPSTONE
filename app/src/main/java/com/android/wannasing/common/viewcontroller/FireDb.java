@@ -1,11 +1,11 @@
-package com.android.wannasing.db;
+package com.android.wannasing.common.viewcontroller;
 
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.android.wannasing.common.model.Entity;
-import com.android.wannasing.db.FireDbException.Code;
+import com.android.wannasing.common.viewcontroller.FireDbException.Code;
 import com.android.wannasing.utility.Utilities;
 import com.android.wannasing.utility.Utilities.LogType;
 import com.google.firebase.firestore.CollectionReference;

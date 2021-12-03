@@ -1,4 +1,4 @@
-package com.android.wannasing.db;
+package com.android.wannasing.common.viewcontroller;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

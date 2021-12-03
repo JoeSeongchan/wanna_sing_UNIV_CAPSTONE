@@ -19,10 +19,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.wannasing.R;
 import com.android.wannasing.common.model.User;
+import com.android.wannasing.common.viewcontroller.FireDb;
+import com.android.wannasing.common.viewcontroller.FireDb.TransactionManager;
+import com.android.wannasing.common.viewcontroller.ServerDbLifeCycleManager;
 import com.android.wannasing.databinding.ActivityRegisterBinding;
-import com.android.wannasing.db.FireDb;
-import com.android.wannasing.db.FireDb.TransactionManager;
-import com.android.wannasing.db.FireDbLifeCycleManager;
 import com.android.wannasing.utility.Utilities;
 import com.android.wannasing.utility.Utilities.LogType;
 import com.google.firebase.auth.FirebaseAuth;
@@ -94,10 +94,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     transactionManager = new TransactionManager();
     // ServerDb 설정.
-    FireDbLifeCycleManager fireDbLifeCycleManager = new FireDbLifeCycleManager();
-    getLifecycle().addObserver(fireDbLifeCycleManager);
+    ServerDbLifeCycleManager serverDbLifeCycleManager = new ServerDbLifeCycleManager();
+    getLifecycle().addObserver(serverDbLifeCycleManager);
     userFireDb = new FireDb<>("user_list", User.class);
-    fireDbLifeCycleManager.add(userFireDb);
+    serverDbLifeCycleManager.add(userFireDb);
   }
 
   private void setBirthDate(View view) {
