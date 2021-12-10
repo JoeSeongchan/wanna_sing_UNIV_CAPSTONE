@@ -10,7 +10,7 @@ public class ChatUtilities {
   private static final SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
 
   public static String makeDateStr(Chat chat) {
-    Date date = chat.getTimestamp().toDate();
+    Date date = chat.getTimestamp();
     return dateFormat.format(date) + "\n" +
         timeFormat.format(date);
   }

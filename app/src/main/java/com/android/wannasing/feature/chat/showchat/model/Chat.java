@@ -7,8 +7,8 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.Exclude;
-import com.google.firebase.firestore.ServerTimestamp;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Objects;
@@ -38,9 +38,8 @@ public class Chat implements Serializable, Data {
   private String msg = DEF_MSG;
   @NonNull
   private String nickname = DEF_NICK;
-  @ServerTimestamp
   @NonNull
-  private Timestamp timestamp = DEF_TIME;
+  private Date timestamp = Calendar.getInstance().getTime();
   @Exclude
   private boolean isUpdated = false;
 
@@ -101,11 +100,11 @@ public class Chat implements Serializable, Data {
   }
 
   @NonNull
-  public Timestamp getTimestamp() {
+  public Date getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(@NonNull Timestamp timestamp) {
+  public void setTimestamp(@NonNull Date timestamp) {
     this.timestamp = timestamp;
   }
 
