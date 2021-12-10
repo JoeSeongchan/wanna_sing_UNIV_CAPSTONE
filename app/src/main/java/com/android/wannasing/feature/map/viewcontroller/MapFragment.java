@@ -17,6 +17,7 @@ import com.android.wannasing.utility.Utilities.LogType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
@@ -28,8 +29,8 @@ public class MapFragment extends Fragment implements
     MapView.CurrentLocationEventListener,
     MapView.MapViewEventListener, MapView.POIItemEventListener {
 
+  public static final String FROM_HOME_ACTIVITY_USER_ID_TAG = "FROM_HOME_ACTIVITY_USER_ID_TAG";
   String API_KEY = "KakaoAK 06da443039521a441411e567abc55454"; //REST API 키.
-
   // 좌표.
   private MapPoint.GeoCoordinate geoCoordinate;
   private MapView mapView;
@@ -39,18 +40,25 @@ public class MapFragment extends Fragment implements
   private List<Place> resultLists;
 
   private View rootView;
+  private String userId;
 
   public MapFragment() {
   }
 
-  public static MapFragment newInstance() {
+  public static MapFragment newInstance(String userId) {
     MapFragment instance = new MapFragment();
+    Bundle bundle = new Bundle();
+    bundle.putString(FROM_HOME_ACTIVITY_USER_ID_TAG, userId);
+    instance.setArguments(bundle);
     return instance;
   }
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    Optional<Bundle> arg = Optional.ofNullable(getArguments());
+    this.userId = arg.map(bundle -> bundle.getString(FROM_HOME_ACTIVITY_USER_ID_TAG))
+        .orElse("05uJa1ZLdMWJEetdVxIBMVoZmVG3");
   }
 
   @Nullable
@@ -283,7 +291,7 @@ public class MapFragment extends Fragment implements
     }
 
     ShowKaraokeInfoFragment showKaraokeInfoFragment = ShowKaraokeInfoFragment
-        .newInstance(karaoke_id, place_name, phone, address_name, road_address_name);
+        .newInstance(karaoke_id, place_name, phone, address_name, road_address_name, userId);
     showKaraokeInfoFragment.show(getChildFragmentManager(), "Popup");
   }
 

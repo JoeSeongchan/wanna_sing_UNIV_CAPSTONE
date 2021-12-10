@@ -323,7 +323,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:text="2명"
+            android:text="1명"
             android:textColor="@color/black"
             tools:ignore="MissingConstraints" />
 

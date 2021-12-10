@@ -35,6 +35,8 @@ public class CreatePartyActivity extends AppCompatActivity {
       = "FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_ID_TAG";
   public static final String FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG
       = "FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG";
+  public static final String FROM_SHOW_KARAOKE_INFO_FRAG_HOST_ID_TAG
+      = "FROM_SHOW_KARAOKE_INFO_FRAG_HOST_ID_TAG";
   public static final String PARTY_COLLECTION_PATH = "party_list";
   public static final String JOINS_COLLECTION_PATH = "joins_list";
 
@@ -49,7 +51,7 @@ public class CreatePartyActivity extends AppCompatActivity {
   private Date meetingDate = null;
   private MyTime startTime = null;
   private MyTime endTime = null;
-  private int memMax = 0;
+  private int memMax = 1;
   private String karaokeId = null;
   private String karaokeName = null;
 
@@ -59,6 +61,7 @@ public class CreatePartyActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(binding.getRoot());
     getKaraokeInfoFromShowKaraokeInfoFragment();
+    getUserIdFromShowKaraokeInfoFragment();
     setDb();
     setUi();
   }
@@ -70,6 +73,12 @@ public class CreatePartyActivity extends AppCompatActivity {
     this.karaokeName = Optional
         .ofNullable(getIntent().getStringExtra(FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG))
         .orElse("dummy_karaoke_name");
+  }
+
+  private void getUserIdFromShowKaraokeInfoFragment() {
+    this.hostId = Optional
+        .ofNullable(getIntent().getStringExtra(FROM_SHOW_KARAOKE_INFO_FRAG_HOST_ID_TAG))
+        .orElse("05uJa1ZLdMWJEetdVxIBMVoZmVG3");
   }
 
   private void setDb() {

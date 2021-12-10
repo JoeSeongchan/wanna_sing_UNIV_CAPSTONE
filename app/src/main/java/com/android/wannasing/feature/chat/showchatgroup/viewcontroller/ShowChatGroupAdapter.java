@@ -46,13 +46,13 @@ public class ShowChatGroupAdapter extends ListAdapter<ChatGroup, ShowChatGroupVi
     @Override
     public boolean areItemsTheSame(@NonNull ChatGroup oldItem,
         @NonNull ChatGroup newItem) {
-      return oldItem.equals(newItem);
+      return oldItem.getPrimaryKey().equals(newItem.getPrimaryKey());
     }
 
     @Override
     public boolean areContentsTheSame(@NonNull ChatGroup oldItem,
         @NonNull ChatGroup newItem) {
-      return oldItem.equals(newItem);
+      return oldItem.getPrimaryKey().equals(newItem.getPrimaryKey());
     }
   }
 }

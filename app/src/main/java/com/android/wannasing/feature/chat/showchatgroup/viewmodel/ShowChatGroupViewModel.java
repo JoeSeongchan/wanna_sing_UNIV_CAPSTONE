@@ -12,6 +12,7 @@ import com.android.wannasing.utility.Utilities;
 import com.android.wannasing.utility.Utilities.LogType;
 import com.google.firebase.firestore.FirebaseFirestore;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,40 +39,32 @@ public class ShowChatGroupViewModel extends ViewModel {
     return chatGroupList;
   }
 
-  private void initChatGroupList() {
-    Observable.<List<Joins>>defer(
-        () -> Observable.create(emitter -> fireDb.collection(JOINS_COLLECTION_PATH)
+  public void initChatGroupList() {
+    Single.<List<Joins>>defer(
+        () -> Single.create(emitter -> fireDb.collection(JOINS_COLLECTION_PATH)
             .whereEqualTo("memberId", user.getId())
-            .addSnapshotListener((value, error) -> {
-              if (error != null) {
-                emitter.onError(new Throwable(Utilities.makeLog("err.")));
-              } else if (!value.isEmpty()) {
-                List<Joins> joinsList = value.toObjects(Joins.class);
-                emitter.onNext(joinsList);
-              }
-            })))
+            .get()
+            .addOnSuccessListener(queryDocumentSnapshots -> emitter
+                .onSuccess(queryDocumentSnapshots.toObjects(Joins.class)))
+            .addOnFailureListener(emitter::onError)))
         .subscribeOn(Schedulers.io())
         .observeOn(Schedulers.io())
-        .flatMap(Observable::fromIterable)
-        .flatMap(joins -> Observable.<Party>defer(
-            () -> Observable.create(emitter -> fireDb.collection(PARTY_COLLECTION_PATH)
+        .flatMapObservable(Observable::fromIterable)
+        .flatMapSingle(joins -> Single.<Party>defer(
+            () -> Single.create(emitter -> fireDb.collection(PARTY_COLLECTION_PATH)
                 .whereEqualTo("partyName", joins.partyName)
                 .whereEqualTo("hostId", joins.hostId)
-                .addSnapshotListener((value, error) -> {
-                  if (error != null) {
-                    emitter.onError(new Throwable(Utilities.makeLog("err.")));
-                  } else if (!value.isEmpty()) {
-                    List<Party> partyList = value.toObjects(Party.class);
-                    emitter.onNext(partyList.get(0));
-                  }
-                }))))
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> emitter
+                    .onSuccess(queryDocumentSnapshots.toObjects(Party.class).get(0)))
+                .addOnFailureListener(emitter::onError))))
         .map(ChatGroup::new)
         .subscribe(chatGroup -> {
-          Utilities.log(LogType.d, "chatGroup : " + chatGroup.getName());
+//          Utilities.log(LogType.d, "chatGroup : " + chatGroup.getName());
           List<ChatGroup> fixedChatGroupList = chatGroupList.getValue();
           fixedChatGroupList.remove(chatGroup);
           fixedChatGroupList.add(chatGroup);
-          chatGroupList.postValue(fixedChatGroupList);
+          chatGroupList.setValue(fixedChatGroupList);
         }, err -> Utilities.log(LogType.w, "err : " + err.getMessage()));
   }
 

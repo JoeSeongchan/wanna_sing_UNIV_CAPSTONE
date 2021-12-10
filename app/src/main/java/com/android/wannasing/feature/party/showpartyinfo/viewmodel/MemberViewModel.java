@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.android.wannasing.common.model.Joins;
+import com.android.wannasing.common.viewcontroller.FireDb;
+import com.android.wannasing.common.viewcontroller.FireDb.TransactionManager;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import java.util.List;
@@ -16,12 +18,16 @@ public class MemberViewModel extends ViewModel {
   private final FirebaseFirestore fireDb;
   private final String hostId;
   private final String partyName;
+  private final FireDb<Joins> joinsFireDb;
+  private final TransactionManager transactionManager;
   private MutableLiveData<List<String>> memberIdList;
 
   public MemberViewModel(FirebaseFirestore fireDb, String hostId, String partyName) {
     this.fireDb = fireDb;
     this.hostId = hostId;
     this.partyName = partyName;
+    this.joinsFireDb = new FireDb<>("joins_list", Joins.class);
+    this.transactionManager = new TransactionManager();
   }
 
   public LiveData<List<String>> getMemberIdList() {
@@ -51,6 +57,14 @@ public class MemberViewModel extends ViewModel {
         return 0;
       });
       this.memberIdList.postValue(memberIdList);
+    });
+  }
+
+  public void makeJoins(String memberId) {
+    transactionManager.run(transaction -> {
+      Joins newJoins = new Joins(memberId, hostId, partyName);
+      joinsFireDb.setData(newJoins, transaction);
+      return null;
     });
   }
 

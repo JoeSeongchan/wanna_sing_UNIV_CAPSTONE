@@ -14,17 +14,19 @@ import com.android.wannasing.feature.party.createparty.viewcontroller.CreatePart
 public class ShowKaraokeInfoFragment extends DialogFragment {
 
 
+  private static final String FROM_MAP_FRAG_USER_ID_TAG = "FROM_MAP_FRAG_USER_ID_TAG";
   private static String karaokeId = "karaokeId";
   private static String title_s = "TITLE";
   private static String phone_s = "PHONE";
   private static String address1_s = "ADDRESS1";
   private static String address2_s = "ADDRESS2";
-
+  private String userId;
 
   public static ShowKaraokeInfoFragment newInstance(String KaraokeId, String Title_D,
       String Phonenum_D,
       String Address1_D,
-      String Address2_D) {
+      String Address2_D,
+      String userId) {
     //Log.d("WANTSLEEP","????\n"+"Place.name: "+Title_D+" Phone num: "+Phonenum_D+" Address1: " +Address1_D+" Address2: "+Address2_D+"\n");
 
     karaokeId = KaraokeId;
@@ -39,6 +41,7 @@ public class ShowKaraokeInfoFragment extends DialogFragment {
     bundle.putString(phone_s, Phonenum_D);
     bundle.putString(address1_s, Address1_D);
     bundle.putString(address2_s, Address2_D);
+    bundle.putString(FROM_MAP_FRAG_USER_ID_TAG, userId);
     //Log.d("WANTSLEEP","BUNDLE\n"+"Place.name: "+title_s+" Phone num: "+phone_s+" Address1: " +address1_s+" Address2: "+address2_s+"\n");
 
     ShowKaraokeInfoFragment fragment = new ShowKaraokeInfoFragment();
@@ -48,6 +51,7 @@ public class ShowKaraokeInfoFragment extends DialogFragment {
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    userId = getArguments().getString(FROM_MAP_FRAG_USER_ID_TAG);
     // Use the Builder class for convenient dialog construction
     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -67,6 +71,8 @@ public class ShowKaraokeInfoFragment extends DialogFragment {
               .putExtra(CreatePartyActivity.FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_ID_TAG, karaokeId);
           intent
               .putExtra(CreatePartyActivity.FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG, title_s);
+          intent
+              .putExtra(CreatePartyActivity.FROM_SHOW_KARAOKE_INFO_FRAG_HOST_ID_TAG, userId);
           startActivity(intent);
         });
 

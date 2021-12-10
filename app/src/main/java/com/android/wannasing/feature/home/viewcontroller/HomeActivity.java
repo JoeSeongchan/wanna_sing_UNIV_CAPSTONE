@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
     showPartyGroupFragment = ShowPartyGroupFragment.newInstance();
 
     showPartyGroupFragment = ShowPartyGroupFragment.newInstance();
-    mapFragment = MapFragment.newInstance();
+    mapFragment = MapFragment.newInstance(user.getId());
     showChatGroupFragment = ShowChatGroupFragment.newInstance(user);
     showMyProfileFragment = ShowMyProfileFragment.newInstance(user);
     allFragmentList = Arrays
@@ -84,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
           Bundle bundle = new Bundle();
           bundle.putSerializable(ShowPartyInfoActivity.FROM_SHOW_PARTY_GROUP_FRAG_PARTY_DATA_TAG,
               party);
+          bundle.putString(ShowPartyInfoActivity.FROM_HOME_ACTIVITY_USER_ID_TAG, user.getId());
           intent.putExtras(bundle);
           startActivity(intent);
         });

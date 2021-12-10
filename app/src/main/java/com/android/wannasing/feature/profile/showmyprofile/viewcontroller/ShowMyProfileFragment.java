@@ -21,10 +21,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.android.wannasing.R;
 import com.android.wannasing.common.model.User;
+import com.android.wannasing.feature.account.login.viewcontroller.LoginActivity;
 import com.android.wannasing.feature.audio.recordaudio.viewcontroller.AudioAdapter;
 import com.android.wannasing.feature.audio.uploadaudio.viewcontroller.SetUploadOptionActivity;
 import com.android.wannasing.feature.profile.editprofile.viewcontroller.EditProfileActivity;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -127,6 +129,13 @@ public class ShowMyProfileFragment extends Fragment {
     audioList = new ArrayList<>();
     titleList = new ArrayList<>();
     audioAdapter = new AudioAdapter(getActivity().getApplicationContext(), audioList, titleList);
+    rootView.findViewById(R.id.showMyProfile_btn_logout).setOnClickListener(view -> {
+      FirebaseAuth authDb = FirebaseAuth.getInstance();
+      authDb.signOut();
+      Intent intent = new Intent(getActivity(), LoginActivity.class);
+      startActivity(intent);
+      getActivity().finish();
+    });
   }
 
   private void retrieveSongDataFromFireStorage() {

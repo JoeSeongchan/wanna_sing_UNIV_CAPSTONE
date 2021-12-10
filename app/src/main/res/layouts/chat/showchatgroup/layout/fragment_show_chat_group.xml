@@ -22,6 +22,13 @@
       android:text="@string/showChatGroup_tv_userNick"
       android:textSize="20sp"
       app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageButton
+      android:id="@+id/showChatGroup_btn_refresh"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:src="@drawable/show_party_group_refresh_icon"
+      app:layout_constraintRight_toRightOf="parent" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 

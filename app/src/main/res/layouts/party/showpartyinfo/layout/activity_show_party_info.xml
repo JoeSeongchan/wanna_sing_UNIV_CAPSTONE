@@ -170,11 +170,11 @@
     android:orientation="horizontal">
 
     <Button
-      android:id="@+id/showPartyInfo_btn_done"
+      android:id="@+id/showPartyInfo_btn_bottom"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom"
-      android:text="참가/모임종료/모임나가기" />
+      android:text="참가" />
   </LinearLayout>
 
 </LinearLayout>

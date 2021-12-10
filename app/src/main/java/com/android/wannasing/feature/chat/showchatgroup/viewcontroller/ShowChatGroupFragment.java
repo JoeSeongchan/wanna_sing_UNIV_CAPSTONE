@@ -20,6 +20,8 @@ import com.android.wannasing.feature.chat.showchatgroup.viewcontroller.ShowChatG
 import com.android.wannasing.feature.chat.showchatgroup.viewcontroller.ShowChatGroupViewHolder.OnChatGroupItemClickListener;
 import com.android.wannasing.feature.chat.showchatgroup.viewmodel.ShowChatGroupViewModel;
 import com.android.wannasing.feature.chat.showchatgroup.viewmodel.ShowChatGroupViewModelFactory;
+import com.android.wannasing.utility.Utilities;
+import com.android.wannasing.utility.Utilities.LogType;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Optional;
 
@@ -71,6 +73,9 @@ public class ShowChatGroupFragment extends Fragment implements
     ((TextView) rootView.findViewById(R.id.showChatGroup_tv_userNick)).setText(
         rootView.getContext().getString(R.string.showChatGroup_tv_userNick, currentUser.getNick()));
     setRecyclerView();
+    rootView.findViewById(R.id.showChatGroup_btn_refresh).setOnClickListener(v -> {
+      viewModel.initChatGroupList();
+    });
   }
 
   private void setRecyclerView() {
@@ -81,7 +86,11 @@ public class ShowChatGroupFragment extends Fragment implements
     ShowChatGroupViewModelFactory factory = new ShowChatGroupViewModelFactory(
         FirebaseFirestore.getInstance(), currentUser);
     viewModel = new ViewModelProvider(this, factory).get(ShowChatGroupViewModel.class);
-    viewModel.getChatGroupList().observe(getActivity(), partyList -> adapter.submitList(partyList));
+    viewModel.getChatGroupList().observe(getActivity(), partyList -> {
+      partyList.forEach(party -> Utilities.log(LogType.d, "party : " + party.getName()));
+      adapter.submitList(partyList);
+      adapter.notifyDataSetChanged();
+    });
   }
 
   private void informActivityWhichChatGroupIsClicked(ChatGroup chatGroup) {

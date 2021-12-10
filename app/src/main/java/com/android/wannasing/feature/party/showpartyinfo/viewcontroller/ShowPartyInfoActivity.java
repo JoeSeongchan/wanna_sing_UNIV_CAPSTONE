@@ -32,12 +32,14 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
 
   public static final String TAG = "ShowPartyInfoActivity_R";
   public static final String FROM_SHOW_PARTY_GROUP_FRAG_PARTY_DATA_TAG = "FROM_PARTY_FRAG_PARTY_DATA_TAG";
+  public static final String FROM_HOME_ACTIVITY_USER_ID_TAG = "FROM_HOME_ACTIVITY_USER_ID_TAG";
   private ActivityShowPartyInfoBinding binding;
   private Party party;
   private FirebaseFirestore fireDb;
   private MemberViewModel memberViewModel;
   private RecyclerView rv;
   private MemberAdapter adapter;
+  private String userId;
 
   public void getPartyInfoFromFormerActivity() {
     party = Optional
@@ -64,12 +66,20 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
         });
   }
 
+  private void getUserIdFromHomeActivity() {
+    userId = Optional
+        .ofNullable(getIntent()).map(Intent::getExtras)
+        .map(bundle -> bundle.getString(FROM_HOME_ACTIVITY_USER_ID_TAG))
+        .orElse("05uJa1ZLdMWJEetdVxIBMVoZmVG3");
+  }
+
   public void onCreate(Bundle savedInstanceState) {
     binding = ActivityShowPartyInfoBinding
         .inflate(getLayoutInflater());
     super.onCreate(savedInstanceState);
     setContentView(binding.getRoot());
     getPartyInfoFromFormerActivity();
+    getUserIdFromHomeActivity();
     setDb();
     setUi();
   }
@@ -96,6 +106,7 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
     initRecyclerView();
     setMemberViewModel();
     showMemberInfoThroughUi();
+    setBtnJoinOnClickListener();
   }
 
   private void showPartyInfoThroughUi() {
@@ -137,10 +148,23 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
         party.meetingStartTime.minutes));
   }
 
+  private void setBtnJoinOnClickListener() {
+    binding.showPartyInfoBtnBottom.setOnClickListener(v -> {
+      memberViewModel.makeJoins(userId);
+    });
+  }
+
   private void showMemberInfoThroughUi() {
     // view model 에서 멤버 id 리스트 가져옴.
     memberViewModel.getMemberIdList().observe(this, memberIdList ->
         adapter.submitList(memberIdList));
+    memberViewModel.getMemberIdList().observe(this, memberIdList -> {
+      if (memberIdList.contains(userId)) {
+        binding.showPartyInfoBtnBottom.setClickable(false);
+      } else {
+        binding.showPartyInfoBtnBottom.setClickable(true);
+      }
+    });
   }
 
   @Override
