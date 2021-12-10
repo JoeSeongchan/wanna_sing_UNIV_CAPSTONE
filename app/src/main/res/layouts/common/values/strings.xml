@@ -46,7 +46,7 @@
   <string name="tv_nickName_chat">nickname</string>
   <string name="btn_fullText_elChat">전체보기</string>
   <string name="tv_msg_date_form">%1$s\n%2$s</string>
-  <string name="tv_nick_chatGroup">%1$s 님, 어서오세요.</string>
+  <string name="showChatGroup_tv_userNick">%1$s 님, 어서오세요.</string>
   <string name="item_home_bottomNav">홈</string>
   <string name="item_map_bottomNav">지도</string>
   <string name="item_chat_bottomNav">채팅</string>

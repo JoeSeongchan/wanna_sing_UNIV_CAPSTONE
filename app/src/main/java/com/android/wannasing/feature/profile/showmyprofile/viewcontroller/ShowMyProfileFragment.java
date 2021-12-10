@@ -40,7 +40,7 @@ public class ShowMyProfileFragment extends Fragment {
 
   public static final String ARGS_USER_INFO = "USER_INFO";
   //로그인 된 유저 id
-  public String id = "IOxZt7qFPxdE93PNtElzSztmYpP2";
+  public String userId = "IOxZt7qFPxdE93PNtElzSztmYpP2";
   // 데이터베이스
   protected FirebaseFirestore db = FirebaseFirestore.getInstance();
   protected FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -88,6 +88,7 @@ public class ShowMyProfileFragment extends Fragment {
     Optional<Bundle> arg = Optional.ofNullable(getArguments());
     this.currentUser = arg.map(bundle -> (User) bundle.getSerializable("USER_INFO"))
         .orElse(User.DUMMY_USER);
+    this.userId = currentUser.getId();
   }
 
   @Nullable
@@ -104,7 +105,8 @@ public class ShowMyProfileFragment extends Fragment {
     this.rootView = view;
     // get song data from firebase storage, findviewbyid all button
     retrieveSongDataFromFireStorage();
-    showSongDataThroughUi();  //get extradata from firestore and show
+    username.setText(currentUser.getNick());
+//    retrieveProfileData();  //get extradata from firestore and show
     addClickListener();        //add click listener
   }
 
@@ -130,7 +132,7 @@ public class ShowMyProfileFragment extends Fragment {
   private void retrieveSongDataFromFireStorage() {
     initViewComponentInstance();
 
-    StorageReference listRef = storage.getReference().child(id);
+    StorageReference listRef = storage.getReference().child(userId);
 
     listRef.listAll()
         .addOnSuccessListener(listResult -> {
@@ -186,9 +188,9 @@ public class ShowMyProfileFragment extends Fragment {
     });
   }
 
-  private void showSongDataThroughUi() {
+  private void retrieveProfileData() {
     db.collection("user_list")
-        .document(id)
+        .document(userId)
         .get()
         .addOnCompleteListener(task2 -> {
           if (task2.isSuccessful()) {
@@ -207,7 +209,7 @@ public class ShowMyProfileFragment extends Fragment {
         });
 
     db.collection("user_profile")
-        .document(id)
+        .document(userId)
         .get()
         .addOnCompleteListener(task -> {
           if (task.isSuccessful()) {
@@ -235,6 +237,8 @@ public class ShowMyProfileFragment extends Fragment {
     add.setOnClickListener(view -> {
       Intent intent = new Intent(getActivity().getApplicationContext(),
           SetUploadOptionActivity.class);
+      intent.putExtra(SetUploadOptionActivity.FROM_SHOW_PROFILE_FRAG_USER_ID_TAG,
+          currentUser.getId());
       startActivity(intent);
     });
 

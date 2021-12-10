@@ -57,10 +57,10 @@ public class ShowPartyGroupViewHolder extends RecyclerView.ViewHolder {
             party.meetingStartTime.minutes));
     LocalTime now = LocalTime.now();
     long duration = party.meetingStartTime.subtract(now);
-    binding.partyItemTvTimeWarning.setText(context
-        .getString(R.string.partyItem_tv_timeWarning,
-            duration
-        ));
+//    binding.partyItemTvTimeWarning.setText(context
+//        .getString(R.string.partyItem_tv_timeWarning,
+//            duration
+//        ));
   }
 
   public interface OnPartyItemClickListener extends EventListener {

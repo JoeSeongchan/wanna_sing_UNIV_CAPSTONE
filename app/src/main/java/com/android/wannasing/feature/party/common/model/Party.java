@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Party implements Serializable, Entity {
 
-  public String hostID = "";
+  public String hostId = "";
   public String partyName = "";
   public List<Genre> genreList = null;
   public Gender gender = null;
@@ -25,12 +25,12 @@ public class Party implements Serializable, Entity {
   public MyTime meetingEndTime = null;
 
 
-  public Party(String hostID, String partyName,
+  public Party(String hostId, String partyName,
       List<Genre> genreList, Gender gender, int age,
       List<AgeDetail> ageDetailList, String karaokeId, String karaokeName, Date meetingDate,
       int curMemberNum, int maxMemberNum, MyTime meetingStartTime,
       MyTime meetingEndTime) {
-    this.hostID = hostID;
+    this.hostId = hostId;
     this.partyName = partyName;
     this.genreList = genreList;
     this.gender = gender;
@@ -57,12 +57,12 @@ public class Party implements Serializable, Entity {
       return false;
     }
     Party party = (Party) o;
-    return hostID.equals(party.hostID) && partyName.equals(party.partyName);
+    return hostId.equals(party.hostId) && partyName.equals(party.partyName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(hostID, partyName);
+    return Objects.hash(hostId, partyName);
   }
 
   @Override

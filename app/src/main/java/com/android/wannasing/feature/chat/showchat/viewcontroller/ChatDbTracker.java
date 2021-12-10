@@ -1,11 +1,8 @@
 package com.android.wannasing.feature.chat.showchat.viewcontroller;
 
-
 import android.app.Application;
-import com.android.wannasing.common.viewcontroller.old.AppDatabase;
-import com.android.wannasing.common.viewcontroller.old.DbTracker;
-import com.android.wannasing.common.viewcontroller.old.ServerDb;
 import com.android.wannasing.feature.chat.showchat.model.Chat;
+import com.android.wannasing.old.firedb.ServerDb;
 import com.android.wannasing.utility.Utilities;
 import com.android.wannasing.utility.Utilities.LogType;
 import io.reactivex.rxjava3.core.Completable;
@@ -37,6 +34,7 @@ public class ChatDbTracker implements DbTracker<Chat> {
         // Room DB 조작.
         .flatMapCompletable(dbChange -> {
           Utilities.log(LogType.d, "change!");
+          Utilities.log(LogType.d, "change! : " + dbChange.getData().getMsg());
           switch (dbChange.getType()) {
             case ADD:
               return dao.insert(dbChange.getData());

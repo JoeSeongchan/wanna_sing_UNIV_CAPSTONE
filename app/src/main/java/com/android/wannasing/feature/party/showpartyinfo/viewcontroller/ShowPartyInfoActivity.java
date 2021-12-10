@@ -31,18 +31,18 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
     OnMemberItemClickListener {
 
   public static final String TAG = "ShowPartyInfoActivity_R";
+  public static final String FROM_SHOW_PARTY_GROUP_FRAG_PARTY_DATA_TAG = "FROM_PARTY_FRAG_PARTY_DATA_TAG";
   private ActivityShowPartyInfoBinding binding;
   private Party party;
   private FirebaseFirestore fireDb;
   private MemberViewModel memberViewModel;
-
   private RecyclerView rv;
   private MemberAdapter adapter;
 
   public void getPartyInfoFromFormerActivity() {
     party = Optional
         .ofNullable(getIntent()).map(Intent::getExtras)
-        .map(bundle -> (Party) bundle.getSerializable("SELECTED_PARTY_INFO"))
+        .map(bundle -> (Party) bundle.getSerializable(FROM_SHOW_PARTY_GROUP_FRAG_PARTY_DATA_TAG))
         .orElseGet(() -> {
           List<Genre> genreList = new ArrayList<>();
           genreList.add(Genre.FREE);
@@ -76,14 +76,14 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
 
   private void initRecyclerView() {
     rv = binding.showPartyInfoRvMemberList;
-    adapter = new MemberAdapter(new MemberDiff(), this, party.hostID);
+    adapter = new MemberAdapter(new MemberDiff(), this, party.hostId);
     rv.setLayoutManager(new LinearLayoutManager(this));
     rv.setAdapter(adapter);
   }
 
   private void setMemberViewModel() {
     MemberViewModelFactory factory = new MemberViewModelFactory(FirebaseFirestore.getInstance(),
-        party.hostID, party.partyName);
+        party.hostId, party.partyName);
     memberViewModel = new ViewModelProvider(this, factory).get(MemberViewModel.class);
   }
 
@@ -125,7 +125,7 @@ public class ShowPartyInfoActivity extends AppCompatActivity implements
             getString(R.string.showPartyInfo_tv_memberNum,
                 party.curMemberNum,
                 party.maxMemberNum));
-    binding.showPartyInfoTvKaraokeName.setText(party.karaokeId);
+    binding.showPartyInfoTvKaraokeName.setText(party.karaokeName);
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(party.meetingDate);
     binding.showPartyInfoTvPartyDate.setText(getString(R.string.showPartyInfo_tv_partyDate,

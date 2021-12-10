@@ -16,13 +16,15 @@ import com.google.firebase.storage.UploadTask;
 
 public class SetUploadOptionActivity extends AppCompatActivity {
 
+  public static final String FROM_SHOW_PROFILE_FRAG_USER_ID_TAG = "FROM_SHOW_PROFILE_FRAG_USER_ID_TAG";
   private TextView direct, record;
   private FirebaseStorage storage = FirebaseStorage.getInstance();
-  private String userid = "IOxZt7qFPxdE93PNtElzSztmYpP2";
+  private String userId = "IOxZt7qFPxdE93PNtElzSztmYpP2";
 
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_set_upload_option);
+    userId = getIntent().getStringExtra(FROM_SHOW_PROFILE_FRAG_USER_ID_TAG);
     initViewInstance();
     setOnClickListeners();
   }
@@ -42,6 +44,7 @@ public class SetUploadOptionActivity extends AppCompatActivity {
 
     record.setOnClickListener(view -> {
       Intent intent = new Intent(getApplicationContext(), RecordAudioActivity.class);
+      intent.putExtra(RecordAudioActivity.FROM_SET_UPLOAD_ACTIVITY_USER_ID_TAG, userId);
       startActivity(intent);
     });
   }
@@ -55,7 +58,7 @@ public class SetUploadOptionActivity extends AppCompatActivity {
       int nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
       returnCursor.moveToFirst();
       StorageReference s_ref = storage.getReference();
-      StorageReference r_ref = s_ref.child(userid + "/" + returnCursor.getString(nameIndex));
+      StorageReference r_ref = s_ref.child(userId + "/" + returnCursor.getString(nameIndex));
       Log.d("upload", "뭐야이건" + returnCursor.getString(nameIndex));
       UploadTask uploadTask = r_ref.putFile((fileUri));
       uploadTask.addOnFailureListener(exception -> Log.d("upload", exception.getMessage()))

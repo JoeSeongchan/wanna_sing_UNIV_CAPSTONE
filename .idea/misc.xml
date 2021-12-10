@@ -22,6 +22,20 @@
         <entry key="..\:/Users/LS_CAP/AndroidStudioProjects/DetailGroupTest/app/src/main/res/layout/user_return.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/LS_CAP/AndroidStudioProjects/DetailGroupTest/app/src/main/res/menu/bottom_nav.xml" value="0.221875" />
         <entry key="..\:/Users/LS_CAP/AndroidStudioProjects/DetailGroupTest/app/src/main/res/menu/bottom_nav_menu.xml" value="0.221875" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/drawable/home_icon.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchat/layout/activity_chat.xml" value="0.21458333333333332" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchat/layout/my_chat.xml" value="0.21458333333333332" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchatgroup/drawable/ic_launcher_background.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchatgroup/layout/activity_chat_group.xml" value="0.3619791666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchatgroup/layout/fragment_show_chat_group.xml" value="0.21927083333333333" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/chat/showchatgroup/layout/item_chat_group.xml" value="0.3619791666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/layouts/party/showpartygroup/layout/item_party.xml" value="0.3619791666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2557291666666667" />
+        <entry key="..\:/gitkraken_project/capstone-project - copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2557291666666667" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/drawable/arrow_left.xml" value="0.3723076923076923" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/drawable/arrow_right.xml" value="0.3723076923076923" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/drawable/shape_unclieked.xml" value="0.21822916666666667" />
@@ -130,6 +144,7 @@
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/createparty/layout/activity_creating_party.xml" value="0.35052083333333334" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/searchparty/layout/activity_search_parties.xml" value="0.35052083333333334" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/showpartygroup/drawable/home_refresh.xml" value="0.20555555555555555" />
+        <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/showpartygroup/layout/fragment_show_party_group.xml" value="0.21041666666666667" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/showpartygroup/layout/fragment_showing_party_group_in_home.xml" value="0.35052083333333334" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/showpartygroup/layout/item_party.xml" value="0.35052083333333334" />
         <entry key="..\:/gitkraken_project/capstone-project/app/src/main/res/layouts/party/showpartyinfo/drawable/btn_host_member.xml" value="0.20555555555555555" />

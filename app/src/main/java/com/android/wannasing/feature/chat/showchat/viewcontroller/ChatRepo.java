@@ -3,7 +3,6 @@ package com.android.wannasing.feature.chat.showchat.viewcontroller;
 
 import android.app.Application;
 import androidx.lifecycle.LiveData;
-import com.android.wannasing.common.viewcontroller.old.AppDatabase;
 import com.android.wannasing.feature.chat.showchat.model.Chat;
 import java.util.List;
 

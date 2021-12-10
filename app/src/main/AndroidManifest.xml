@@ -56,10 +56,7 @@
       android:name="com.android.wannasing.feature.profile.showothersprofile.viewcontroller.ShowOthersProfileActivity"
       android:exported="true" />
     <activity
-      android:name="com.android.wannasing.feature.chat.showchat.viewcontroller.ChatActivity"
-      android:exported="true" />
-    <activity
-      android:name="com.android.wannasing.feature.chat.showchatgroup.viewcontroller.ChatGroupActivity"
+      android:name="com.android.wannasing.feature.chat.showchat.viewcontroller.ShowChatActivity"
       android:exported="true" />
 
     <meta-data

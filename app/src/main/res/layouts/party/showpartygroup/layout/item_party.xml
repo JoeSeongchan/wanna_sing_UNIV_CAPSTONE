@@ -33,18 +33,6 @@
       android:textSize="20sp" />
 
     <TextView
-      android:id="@+id/partyItem_tv_timeWarning"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/partyItem_tv_karaokeName"
-      android:layout_toRightOf="@id/partyItem_tv_memberInfo"
-      android:gravity="center"
-      android:padding="8dp"
-      android:text="@string/partyItem_tv_timeWarning"
-      android:textColor="#ffff0000"
-      android:textSize="15sp" />
-
-    <TextView
       android:id="@+id/partyItem_tv_startDateTime"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

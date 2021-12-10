@@ -58,8 +58,8 @@ public class PartyGroupInHomeViewModel extends ViewModel {
         .orderBy("meetingStartTime", Direction.ASCENDING)
         .limit(pageSize);
     query.get().addOnSuccessListener(queryDocumentSnapshots -> {
-      lastSeenDocSnap = queryDocumentSnapshots.getDocuments()
-          .get(queryDocumentSnapshots.size() - 1);
+      //lastSeenDocSnap = queryDocumentSnapshots.getDocuments()
+      //    .get(queryDocumentSnapshots.size() - 1);
       List<Party> partyList = queryDocumentSnapshots.toObjects(Party.class);
       this.partyList.postValue(partyList);
     });

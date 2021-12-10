@@ -28,20 +28,22 @@ import java.util.Date;
 
 public class RecordAudioActivity extends AppCompatActivity {
 
+  public static final String FROM_SET_UPLOAD_ACTIVITY_USER_ID_TAG = "FROM_SET_UPLOAD_ACTIVITY_USER_ID_TAG";
+  //firebase & id
+  private FirebaseStorage storage = FirebaseStorage.getInstance();
+
   private MediaRecorder recorder;
   private String filePath;
   private ImageButton record;
   private TextView recording;
   private boolean isRecording = false;    // 현재 녹음 상태를 확인하기 위함.
-
-  //firebase & id
-  private FirebaseStorage storage = FirebaseStorage.getInstance();
   private String userid = "IOxZt7qFPxdE93PNtElzSztmYpP2";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_record_audio);
+    userid = getIntent().getStringExtra(FROM_SET_UPLOAD_ACTIVITY_USER_ID_TAG);
     permissionCheck();
     init();
     click();

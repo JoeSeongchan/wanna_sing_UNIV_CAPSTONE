@@ -4,19 +4,21 @@ import static android.content.ContentValues.TAG;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.wannasing.R;
+import com.android.wannasing.common.model.Joins;
 import com.android.wannasing.databinding.ActivityCreatePartyBinding;
 import com.android.wannasing.feature.party.common.model.Party;
 import com.android.wannasing.feature.party.common.model.Party.AgeDetail;
 import com.android.wannasing.feature.party.common.model.Party.Gender;
 import com.android.wannasing.feature.party.common.model.Party.Genre;
 import com.android.wannasing.feature.party.common.model.Party.MyTime;
+import com.android.wannasing.utility.Utilities;
+import com.android.wannasing.utility.Utilities.LogType;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
@@ -29,10 +31,17 @@ import java.util.Optional;
 
 public class CreatePartyActivity extends AppCompatActivity {
 
+  public static final String FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_ID_TAG
+      = "FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_ID_TAG";
+  public static final String FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG
+      = "FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG";
+  public static final String PARTY_COLLECTION_PATH = "party_list";
+  public static final String JOINS_COLLECTION_PATH = "joins_list";
+
   private final List<Genre> genreList = new ArrayList<>();
   private final List<AgeDetail> ageDetail = new ArrayList<>();
   private ActivityCreatePartyBinding binding;
-  private String hostId = "dummy_host_id";
+  private String hostId = "05uJa1ZLdMWJEetdVxIBMVoZmVG3";
   private FirebaseFirestore fireDb;
   private String groupName = null;
   private Gender gender = null;
@@ -49,8 +58,18 @@ public class CreatePartyActivity extends AppCompatActivity {
         .inflate(getLayoutInflater());
     super.onCreate(savedInstanceState);
     setContentView(binding.getRoot());
+    getKaraokeInfoFromShowKaraokeInfoFragment();
     setDb();
     setUi();
+  }
+
+  private void getKaraokeInfoFromShowKaraokeInfoFragment() {
+    this.karaokeId = Optional
+        .ofNullable(getIntent().getStringExtra(FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_ID_TAG))
+        .orElse("dummy_karaoke_id");
+    this.karaokeName = Optional
+        .ofNullable(getIntent().getStringExtra(FROM_SHOW_KARAOKE_INFO_FRAG_KARAOKE_NAME_TAG))
+        .orElse("dummy_karaoke_name");
   }
 
   private void setDb() {
@@ -66,7 +85,6 @@ public class CreatePartyActivity extends AppCompatActivity {
     setTimeClickListener();
     setMemberMaxNumClickListener();
     setCreatePartyBtnClickListener();
-    getKaraokeIdFromFormerActivity();
   }
 
   private void setPartyTitleLayout() {
@@ -384,17 +402,6 @@ public class CreatePartyActivity extends AppCompatActivity {
     });
   }
 
-  private void getKaraokeIdFromFormerActivity() {
-    karaokeId = Optional
-        .ofNullable(getIntent()).map(Intent::getExtras)
-        .map(bundle -> bundle.getString("KARAOKE_ID"))
-        .orElse("default_karaoke_id");
-    karaokeName = Optional
-        .ofNullable(getIntent()).map(Intent::getExtras)
-        .map(bundle -> bundle.getString("KARAOKE_NAME"))
-        .orElse("default_karaoke_name");
-  }
-
   private void writeNewGroup() {
     Party party = new Party(
         hostId,
@@ -406,14 +413,20 @@ public class CreatePartyActivity extends AppCompatActivity {
         karaokeId,
         karaokeName,
         meetingDate,
-        0,
+        1,
         memMax,
         startTime,
         endTime);
-    fireDb.collection("party_list")
+    fireDb.collection(PARTY_COLLECTION_PATH)
         .add(party)
-        .addOnSuccessListener(unused -> Log.d(TAG, "SUCCESS!"))
+        .addOnSuccessListener(unused -> Log.d(TAG, "SUCCESS."))
         .addOnFailureListener(e -> Log.w(TAG, "FAILURE : " + e.getMessage()));
+    Joins joins = new Joins(hostId, hostId, groupName);
+    fireDb.collection(JOINS_COLLECTION_PATH)
+        .add(joins)
+        .addOnSuccessListener(unused -> Utilities.log(LogType.d, "SUCCESS."))
+        .addOnFailureListener(error -> Utilities.log(LogType.w, "FAILURE : " + error.getMessage()));
+    finish();
   }
 
 }

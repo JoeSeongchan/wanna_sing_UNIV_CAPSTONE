@@ -11,11 +11,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.android.wannasing.R;
+import com.android.wannasing.feature.home.viewcontroller.HomeActivity;
 import com.android.wannasing.feature.party.common.model.Party;
-import com.android.wannasing.feature.party.searchparty.viewmodel.PartyGroupInHomeViewModel;
-import com.android.wannasing.feature.party.searchparty.viewmodel.PartyGroupInHomeViewModelFactory;
 import com.android.wannasing.feature.party.showpartygroup.viewcontroller.ShowPartyGroupAdapter.PartyDiff;
 import com.android.wannasing.feature.party.showpartygroup.viewcontroller.ShowPartyGroupViewHolder.OnPartyItemClickListener;
+import com.android.wannasing.feature.party.showpartygroup.viewmodel.PartyGroupInHomeViewModel;
+import com.android.wannasing.feature.party.showpartygroup.viewmodel.PartyGroupInHomeViewModelFactory;
+import com.android.wannasing.feature.party.showpartyinfo.viewcontroller.ShowPartyInfoActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ShowPartyGroupFragment extends Fragment implements
@@ -66,7 +68,7 @@ public class ShowPartyGroupFragment extends Fragment implements
     rv.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
     rv.setAdapter(adapter);
     PartyGroupInHomeViewModelFactory factory = new PartyGroupInHomeViewModelFactory(
-        FirebaseFirestore.getInstance(), ITEM_SHOW_LIMIT);
+        FirebaseFirestore.getInstance());
     viewModel = new ViewModelProvider(this, factory).get(PartyGroupInHomeViewModel.class);
     viewModel.getPartyList().observe(getActivity(), partyList -> adapter.submitList(partyList));
   }
@@ -78,8 +80,8 @@ public class ShowPartyGroupFragment extends Fragment implements
 
   private void informActivityWhichPartyIsClicked(Party party) {
     Bundle result = new Bundle();
-    result.putSerializable("SELECTED_PARTY_INFO", party);
+    result.putSerializable(ShowPartyInfoActivity.FROM_SHOW_PARTY_GROUP_FRAG_PARTY_DATA_TAG, party);
     getParentFragmentManager()
-        .setFragmentResult("PARTY_GROUP", result);
+        .setFragmentResult(HomeActivity.FROM_SHOW_PARTY_GROUP_FRAG_TAG, result);
   }
 }
