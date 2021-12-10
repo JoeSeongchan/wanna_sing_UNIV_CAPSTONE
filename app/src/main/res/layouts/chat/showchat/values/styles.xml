@@ -32,6 +32,20 @@
     <item name="android:textSize">20sp</item>
   </style>
 
+  <style name="tv_msg_your_chat">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_gravity">start</item>
+    <item name="android:autoLink">web|email|phone</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:fontFamily">@font/normal_font</item>
+    <item name="android:maxLines">7</item>
+    <item name="android:paddingTop">10dp</item>
+    <item name="android:paddingBottom">10dp</item>
+    <item name="android:textColor">@color/whiteTextColor</item>
+    <item name="android:textSize">20sp</item>
+  </style>
+
   <style name="tv_date_chat" parent="Widget.AppCompat.TextView">
     <item name="android:layout_width">0dp</item>
     <item name="android:layout_height">wrap_content</item>

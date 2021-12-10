@@ -21,16 +21,20 @@
 
     <activity
       android:name="com.android.wannasing.feature.party.createparty.viewcontroller.CreatePartyActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.party.showpartyinfo.viewcontroller.ShowPartyInfoActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.home.viewcontroller.HomeActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.account.login.viewcontroller.LoginActivity"
-      android:exported="true">
+      android:exported="true"
+      android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -38,26 +42,33 @@
     </activity>
     <activity
       android:name="com.android.wannasing.feature.account.register.viewcontroller.RegisterActivity"
-      android:exported="false" />
+      android:exported="false"
+      android:screenOrientation="portrait" />
 
     <activity
       android:name="com.android.wannasing.feature.audio.recordaudio.viewcontroller.RecordAudioActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.audio.uploadaudio.viewcontroller.SetUploadOptionActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.profile.editprofile.viewcontroller.EditProfileActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.profile.editprofile.viewcontroller.GetNewProfileActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.profile.showothersprofile.viewcontroller.ShowOthersProfileActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
     <activity
       android:name="com.android.wannasing.feature.chat.showchat.viewcontroller.ShowChatActivity"
-      android:exported="true" />
+      android:exported="true"
+      android:screenOrientation="portrait" />
 
     <meta-data
       android:name="com.kakao.sdk.AppKey"

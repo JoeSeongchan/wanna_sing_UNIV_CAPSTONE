@@ -17,6 +17,7 @@
     android:layout_gravity="end"
     android:background="@drawable/bubble_left_tail"
     app:layout_constraintRight_toRightOf="@id/tv_nickName_yourElChat"
+    app:layout_constraintStart_toStartOf="@id/itemYourChatEllipsed_guideLine_start"
     app:layout_constraintTop_toBottomOf="@id/tv_nickName_yourElChat">
 
     <TextView
@@ -46,5 +47,14 @@
     android:text="@string/tv_date_chat"
     app:layout_constraintBottom_toBottomOf="@id/ll_subItem_yourElChat"
     app:layout_constraintStart_toEndOf="@id/ll_subItem_yourElChat" />
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/itemYourChatEllipsed_guideLine_start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:orientation="vertical"
+    app:layout_constraintGuide_begin="16dp"
+    app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
