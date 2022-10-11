@@ -1,8 +1,17 @@
-# capstone-project
-## 2021 2학기 캡스톤 프로젝트 (1)   
-팀명 : 푸린   
-팀장 : 조성찬   
-팀원 : 이슬, 이주엽   
-앱 소개 : 노래방에 같이 갈 사람을 구하는 앱   
-앱 이름 : 노래 할래?   
+# 노래할래? Android/Firebase
+노래할래? Android/Firebase 💡 
+
+[이슬](https://github.com/LSMG3)
+
+[이주엽](https://github.com/guylee97)
+
+[조성찬](https://github.com/JoeSeongchan)
+
+---
+## 개발환경
+- 플랫폼: Android
+- DB, 서버: Google Firebase, Firestore
+
+---
+## 프로젝트 설명  
 ![캡스톤 프로젝트 설명 이미지](./img/introduction.jpeg)
